@@ -223,6 +223,26 @@ li {
     margin-top: 100vh;
     padding: 20px;
   }
+
+  /* Test */
+
+  @media (max-width: 767px) {
+    .topnav {
+      display: flex !important;
+      flex-wrap: wrap;
+      justify-content: center;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+  
+    .topnav a {
+      display: inline-block !important;
+      float: none !important;
+    }
+  
+    .topnav .icon {
+      display: none !important;
+    }
+  }
   
 
   
