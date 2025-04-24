@@ -2195,3 +2195,52 @@
   }
 }
 </style> -->
+
+<style>
+
+@media screen and (max-width: 800px) {
+  .topnav.responsive {
+    position: fixed;
+  }
+
+  .topnav.responsive a.icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+}
+
+
+@media (max-width: 767px) {
+#intro {
+  width: 90% !important;
+  left: 50% !important;
+  transform: translateX(-50%) translateY(-50%) !important;
+}
+
+.fullscreen-video, .fullscreen {
+  object-fit: cover;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.scene {
+  max-width: 100% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding: 1rem !important;
+}
+
+h1, h2, h3, h4, h5, p, ul, li {
+  font-size: 10px !important;
+  padding: 0 5px !important;
+}
+}
+
+</style>
