@@ -1,0 +1,9 @@
+{
+"type": "FeatureCollection",
+"name": "VesselSpills",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "ERTS_numbe": 683522, "Date_incid": "2018-08-21", "CaseName": "Tesoro oil spill Anacortes", "ReportID": 194317, "County": "Skagit", "City": "Anacortes", "Address1": "10200 W. March Pt. Rd", "Address2": null, "Location": "ANACORTES MARATHON REFINERY", "Latitude": 48.50888, "Longitude": -122.56888, "Medium": "Marine", "Incident_C": "Oil Spill", "Regulated": "Y", "Source_Typ": "Vessel", "Source": "TANK SHIP", "Oil_type": "CRUDE OIL", "Quantity_t": 1.0, "QuantityTo": 1.0, "Quantity_I": 0, "Quantity_r": 0.0, "Activity": "BALLASTING/DE-BALLASTING", "Cause_Type": "HUMAN ERROR", "Cause": "PROCEDURAL ERROR", "Impact": "WATER POLLUTION" }, "geometry": { "type": "Point", "coordinates": [ -122.56888, 48.50888 ] } },
+{ "type": "Feature", "properties": { "ERTS_numbe": 694415, "Date_incid": "2019-11-15", "CaseName": "ATB Gulf Reliance/Barge 650-2, oil spill", "ReportID": 206389, "County": "Skagit", "City": "Anacortes", "Address1": "8505 South Texas Road", "Address2": null, "Location": "MARCH POINT HOLLYFRONTIER (FORMERLY SHELL)", "Latitude": 48.51, "Longitude": -122.57777, "Medium": "Puget Sound", "Incident_C": "Oil Spill", "Regulated": "Y", "Source_Typ": "Vessel", "Source": "TANK BARGE", "Oil_type": "CRUDE OIL", "Quantity_t": 27.0, "QuantityTo": 27.0, "Quantity_I": 0, "Quantity_r": 0.0, "Activity": "OIL TRANSFER (CARGO)", "Cause_Type": "UMAN ERROR,ORG/MANAGEMENT FAILURE", "Cause": "INEXPERIENCE, JUDGMENT, LACK OF SUPERVISION", "Impact": "WATER POLLUTION" }, "geometry": { "type": "Point", "coordinates": [ -122.57777, 48.51 ] } }
+]
+}

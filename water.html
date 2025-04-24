@@ -1,0 +1,1232 @@
+<!DOCTYPE html>
+<html> 
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="description" content="Wyatt Stanley" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+
+  <title>Wyatt Stanley</title>
+  <!-- <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,400;0,500;1,400;1,500&display=swap" /> -->
+  <!-- <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/v2.8.1/mapbox-gl.css"> -->
+  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css"> -->
+  <link rel="stylesheet" href="map.css">
+  <script src="https://unpkg.com/scrollama"></script>
+  <script src="https://api.mapbox.com/mapbox-gl-js/v2.8.1/mapbox-gl.js"></script>
+</head>
+
+<body>
+
+    <div class="topnav" id="myTopnav">
+
+        <a href="index.html">Home</a>
+        <a href="pipe.html">Pipelines</a>
+        <a href="Train2.html">Trains</a>
+        <a class="active" href="water.html">Vessels</a>
+
+
+        <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links on smaller screens -->
+        <a href="javascript:void(0);" class="icon">
+            <i class="fa fa-bars"></i>
+        </a>
+    </div>
+
+  <!-- loading a video cover page -->
+  <section id="cover">
+    <!-- loading a video as the background -->
+
+    <style>
+        .fullscreen-video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    </style>
+    
+    <!-- <video class="fullscreen-video" playsinline="" autoplay="" muted="" loop="">
+      <source src="video/boat2.mp4" type="video/mp4">
+    </video> -->
+    <img src="video/Boat.png" class="fullscreen-video">
+
+
+    <div id="intro">
+      <h1>Vessels</h1>
+      <h5>Washington Fossil Fuel Spill Risk</h5>
+      <p></p>
+
+      <div class="footnote">
+        <!-- <span><a href="https://stock.adobe.com">Video Source</a></span> -->
+      </div>
+    </div>
+  </section>
+  <!-- a geonarrative will have two major components, a storyboard and a script panel of a series of scenes/actions -->
+  <section id="geonarrative">
+    <!-- a storymap can present differnt types of objects, like map, chart, diagram, etc. -->
+    <div id="storyboard">
+      <!-- create the place holder element for map -->
+      <div id="map"></div>
+    </div>
+
+    <article class="scene" data-scene="0">
+      <h2>1: 2020 Vessel Routes </h2>
+        <p>
+          "The ecologically rich waters of the Salish Sea are among the busiest shipping routes in the world – and for this reason, the 
+          region has been identified as at highest risk of a major oil spill in Canada" <a href="https://georgiastrait.org/issues/vessel-traffic/" target="_blank">(Georgia Strait Alliance).</a>
+        </p>
+
+        <ul>
+          <li>In 2016, <b>12,394</b> large vessels and oil barges traveled past the San Juan Islands <a href="https://cedar.wwu.edu/ssec/2016ssec/fate_and_effects_of_pollutants/67/" target="_blank">(Buffum)</a>.</li>
+            <br>
+          <li>"Shipping traffic is set to grow dramatically in the next decade, in large part due to major fossil fuel export projects..." (Georgia Strait Alliance).</li>
+            <br>
+          <li>"A Vessel Traffic Risk Assessment for Northern Puget Sound and the Strait of Juan de Fuca (VTRA 2014) found that if all 
+            proposed projects were approved, vessel traffic would increase by <b>21%</b>, accident frequency by <b>18%</b>, and oil spill loss 
+            by <b>68%</b>" (Buffum).</li>
+        </ul>
+        <p>
+          This map includes <a href="https://www.arcgis.com/home/webmap/viewer.html?basemapUrl=https://tiles.arcgis.com/tiles/qboYD3ru0louQq4F/arcgis/rest/services/Tanker_Vessels_Line_Density_2020/MapServer?cacheKey=b512ab97ab6dd528" target="_blank">traffic data</a> based on 
+           2020 vessel traffic in the Salish Sea and <a href="https://www.arcgis.com/apps/MapJournal/index.html?appid=48918c38e9454f8794eb0c565c8a9e16" target="_blank">ports data</a> represented by
+           blue points.
+           <br>
+           <br>
+           Click on the points and traffic areas to display more information.
+           <br>
+           <br>
+           <b>Please refresh the page if map layers are not showing.</b>
+          <br>
+          
+        </p>
+
+        
+    </article>
+
+    <article class="scene" data-scene="1">
+      <h2>2: Tug Boats  </h2>
+        <p>
+          Navigating the complex island topography of the Salish Sea introduces severe risk to vessels transporting oil.
+          "Giant oil tankers, container ships and bulk cargo carriers navigate tricky turns through Haro Strait, Boundary Pass and 
+          adjacent islands"  <a href="https://georgiastrait.org/issues/vessel-traffic/" target="_blank">(Georgia Strait Alliance).</a>
+          <br>
+        </p>
+
+        <ul>
+          <li>"Between 1999 and 2009, more than <b>1,200</b> vessel incidents were reported on the BC Coast, <b>12</b> involving oil tankers" (Georgia Strait Alliance).</li>
+            <br>
+          <li>"From 1995-2008, <b>14</b> oil spills from tankers in Washington State released <b>13,709 gallons</b> of oil" (Georgia Strait Alliance).</li>
+            <br>
+          <li>From 1995-2008, "<b>132</b> near-miss incidents also took place – had these resulted in worst case disasters, the amount of 
+            oil spilled would have been <b>2.7 billion gallons</b>. Learn more" (Georgia Strait Alliance).</li>
+            <br>
+        </ul>
+        
+        <p>
+          To prevent vessel groundings that may result in oil spills, there are tug boats on call to help assist vessels through
+          the Salish Sea. "Since 1999 tug assistance has prevented <b>millions</b> of gallons of oil from spilling into Washington waters" 
+          <a href="https://apps.ecology.wa.gov/coastalatlas/storymaps/spills/spills_sm.html?&Tab=nt1" target="_blank">(WDOE.)</a> 
+          <br>
+          <br>
+          This map displays all the tug boat call outs from 1999 to 2024.
+          <br>
+          <br>
+          Click on the points to display for information about the tug boat call out.
+
+
+          <a href="https://apps.ecology.wa.gov/coastalatlas/storymaps/spills/spills_sm.html?&Tab=nt1" target="_blank">Tug Boat Data.</a>
+        </p>
+    </article>
+
+    <article class="scene" data-scene="2">
+      <h2>3: Refineries</h2>
+        <p>
+          Once cargo vessels make it to port, the oil is transported to a train/pipeline or is held in an onshore tank facility. Vessel to 
+          land transfer along with vessel refueling stations contribute to spill risk.
+          <br>
+          <br>
+          Black points displayed on this map are Washington facilities that are regulated by the Washington State Department of Ecology's Spills Program. 
+          These points represent fixed shore-side facilities such as refineries and refueling terminals. This includes facilities that 
+          transfer to or from tank vessels and pipelines. These facilities refine products such as Gas, Diesel, Crude Oil, Motor Oil, 
+          Edible Oils, and more. These facilities introduce the risk of spills into waterways.
+          <br>
+          <br>
+          Black points displayed on this map are Washington refineries. These refineries have additional oil terminals that transfer oil between 
+          vessels and refineries. This process introduces spill risk to the following:
+          <br>
+          <ul>
+            <li>Populated residential areas and vulnerable communities.</li>
+             <br>
+            
+            <li>Waterways that host culturally significant species and habitat.</li>
+             <br>
+             
+            <li>Wetlands and other natural ecosystems.</li> 
+          </p>
+        </ul>
+
+        <p>
+          This map includes <a href="https://apps.ecology.wa.gov/coastalatlas/storymaps/spills/spills_sm.html?&Tab=nt1" target="_blank">refinery facilities data</a> and 
+          <a href="https://hub.arcgis.com/datasets/fedmaps::petroleum-refineries-in-the-u-s--1/explore" target="_blank">refinery data.</a>
+          <br>
+          <br>
+          Click on the points to display refinery information.
+
+        </p>
+
+    </article>
+    <article class="scene" data-scene="3">
+      <h2>4: Tribal Lands</h2>
+          <p>
+            In Washington state, there is an inequality in the placement of petroleum refineries and their corresponding port terminals. 
+            <br>
+            <br>
+            Black points on this map display refineries, each of which has a corresponding port terminal for vessel oil transfer. The green areas 
+            show tribal lands. The location of these refineries are located within or beside tribal land in every instance within the state of Washington. Spills 
+            in these locations can have detrimental effects on shorelines surrounding these tribal lands. 
+            <br>
+            <br>
+            Other than oil spills, vessels can cause "pollution from discharges of graywater, sewage, lubricating oil, 
+            engine coolants and other contaminants. Beyond the water, increased vessel traffic is also a significant contributor to air 
+            pollution," that can affect these areas <a href="https://georgiastrait.org/issues/vessel-traffic/">(Georgia Strait Alliance)</a>.
+            <br>
+            <br>
+            Click on points and areas to display more information.
+          </p>
+
+
+    </article>
+
+    <article class="scene" data-scene="4">
+      <h2>5: Low Income Areas</h2>
+        <p>
+          Low-income areas are at a higher risk of living in proximity to petroleum facilities. 
+          Petroleum terminals built in low-income areas contribute to "disproportionate exposure to pollution from  
+          burning fossil fuels and chemicals leaching into the water table" <a href="https://www.climaterealityproject.org/blog/how-pipelines-fuel-climate-injustice#:~:text=According%20to%20the%20Southern%20Environmental,or%20belonging%20to%20racial%20or" target="_blank">(The Climate Reality Project).</a>. 
+        </p>
+
+        <ul>
+          <li>"The demand of crude oil shipment has increased the number of tanker ships, vessel traffic, and terminal cargo operations" <a href="https://www.sciencedirect.com/science/article/pii/S0025326X23012316" target="_blank">(Elsevier).</a></li>
+           <br>
+          <li>Increased demand may cause "catastrophic oil spill risk at sea or port since it has raised concerns about the marine environment, human life and marine ecosystem" (Elsevier).</li>
+           <br>
+          <li>"These stages involve various operational risks that may lead to a shipboard oil spill" (Elsevier).</li>
+        </ul>
+        <p>
+          This map contains Washington <a href="https://www.arcgis.com/apps/View/index.html?appid=359a365f28014151a1ce821dd6f6745c">low 
+            income data</a> represented by the blue areas and dark blue points that represent Washington petroleum <a href="https://www.arcgis.com/apps/mapviewer/index.html?layers=16aafe11156d4ce591c6c054e94fffca&layerId=0" target="_blank">port data</a> for oil transfer between trains/pipelines.
+          <br>
+          <br>
+          Click the points and areas to display refinery information.
+          <br>
+
+          
+        </p>
+
+        
+    </article>
+
+
+
+    <article class="scene" data-scene="5">
+      <h2>6: Spills  </h2>
+        <p>
+          This map displays two spill occurrences due to crude oil transfer between a vessel and the Anacortes refinery terminal. 
+          This map displays the proximity of this spill to tribal communities and shows the danger and risk of oil transfer between land and sea.
+          <br>
+          <br>
+          This map includes <a href="https://apps.ecology.wa.gov/coastalatlas/storymaps/spills/spills_sm.html?&Tab=nt1" target="_blank">spill data</a> represented by red, 
+          <a href="https://apps.ecology.wa.gov/coastalatlas/storymaps/spills/spills_sm.html?&Tab=nt1" target="_blank">refinery facilities data</a> represented by 
+          black, and <a href="https://www.arcgis.com/apps/View/index.html?appid=359a365f28014151a1ce821dd6f6745c" target="_blank">tribal 
+            lands data</a> displayed in green
+          <br>
+          <br>
+          Click on each component to display more information.
+
+          
+        <p>
+    </article>
+
+    <!-- <article class="scene" data-scene="6">
+      <h2>4: Response Plans  </h2>
+        <p>
+          <a href="https://apps.ecology.wa.gov/coastalatlas/storymaps/spills/spills_sm.html?&Tab=nt1">Response.</a>
+        <p>
+    </article> -->
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+  </section>
+
+  <section id="footer">
+    <h2>Wyatt Stanley</h2>
+  </section>
+
+  <script>
+    // 1. Declare the maps, script panels, and different thematic layers.
+    let map, scriptPanel = scrollama(), portsLayer, ports2Layer, refineLayer, trafficLayer, tugLayer, vspillLayer, respondLayer, incomeLayer, jrefLayer, orfLayer, tribalLayer;
+
+    // 2. Intialize the layout.
+   
+    history.scrollRestoration = "manual"; // make sure the geo-narrative will be scrolled to the cover page even after a page refresh.
+    window.scrollTo(0, 0); // scroll the geo-narrative to the coverpage
+    adjustStoryboardlSize(); // force a browser window resize.
+    window.addEventListener("resize", adjustStoryboardlSize); // // ask the browser window listen to the resize event, thereby force a viewport resize whenever adjusting the window size.
+
+    // 3. Define Generic window resize listener event
+    function adjustStoryboardlSize() {
+
+      const scenes = document.getElementsByClassName("scene");
+      const storyboard = document.getElementById("storyboard");
+
+      // 3.1 determine the height of each scene element
+      let sceneH = Math.floor(window.innerHeight * 0.75);
+      for (const scene of scenes) {
+        scene.style.height = sceneH + "px";
+      }
+      
+      // 3.2 determin the height of the storyboard.
+      let storyboardHeight = window.innerHeight;
+      let storyboardMarginTop = (window.innerHeight - storyboardHeight) / 2;
+
+      storyboard.style.height = storyboardHeight + "px";
+      storyboard.style.top = storyboardMarginTop + "px"
+
+      // 3.3 tell scrollama/script panel to update new element dimensions
+      scriptPanel.resize();
+    }
+
+    // 4. Initialize the mapbox
+    mapboxgl.accessToken =
+      'pk.eyJ1IjoiamFrb2J6aGFvIiwiYSI6ImNpcms2YWsyMzAwMmtmbG5icTFxZ3ZkdncifQ.P9MBej1xacybKcDN_jehvw'; // Assign the access token
+   
+    map = new mapboxgl.Map({
+      container: 'map', // container ID
+      style: 'mapbox://styles/mapbox/light-v10',
+      zoom: 7, // starting zoom
+      minZoom: 3,
+      maxZoom: 10,
+      center: [-121.93, 47.33], // starting center
+      scrollZoom: false,
+      boxZoom: false,
+      doubleClickZoom: false
+    });  // Declare the map object
+
+    // An alternative way to disable map zoom when using scroll
+    // map.scrollZoom.disable();
+
+
+    // 5. define the asynchronous function to load geojson data and then performs the dependent actions.
+    async function geojsonFetch() {
+
+
+      // 6 wait till the data of washington counties and celltowers are fully loaded.
+      let response, ports, ports2, refine, traffic, tug, vspill, respond, income, jref, orf, tribal;
+      response = await fetch("assets/Water/Ports.geojson");
+      ports = await response.json();
+      response = await fetch("assets/Water/Ports2.geojson");
+      ports2 = await response.json();
+      response = await fetch("assets/Water/refinaries.geojson");
+      refine = await response.json();
+      response = await fetch("assets/Water/traffic.geojson");
+      traffic = await response.json();
+      response = await fetch("assets/Water/tug.geojson");
+      tug = await response.json();
+      response = await fetch("assets/Water/VesselSpills.geojson");
+      vspill = await response.json();
+      response = await fetch("assets/Water/response.geojson");
+      respond = await response.json();
+      response = await fetch("assets/Water/lowincome.geojson");
+      income = await response.json();
+      response = await fetch("assets/Water/just_refine.geojson");
+      jref = await response.json();
+      response = await fetch("assets/Water/just_refine.geojson");
+      orf = await response.json();
+      response = await fetch("assets/Train/Full_Tribal.json");
+      tribal = await response.json();
+
+
+
+
+      // 7. Trigger operations inside of the the ()=> {} funciton while loading the map.
+
+
+        // 8. add map source and declare layers.
+        map.addSource('ports-src', {
+          type: 'geojson',
+          data: ports
+        });
+
+        map.addSource('ports2-src', {
+          type: 'geojson',
+          data: ports2
+        });
+
+        map.addSource('refine-src', {
+          type: 'geojson',
+          data: refine
+        });
+
+        map.addSource('traffic-src', {
+          type: 'geojson',
+          data: traffic
+        });
+
+        map.addSource('tug-src', {
+          type: 'geojson',
+          data: tug
+        });
+
+        map.addSource('vspill-src', {
+          type: 'geojson',
+          data: vspill
+        });
+
+        map.addSource('respond-src', {
+          type: 'geojson',
+          data: respond
+        });
+
+        map.addSource('income-src', {
+          type: 'geojson',
+          data: income
+        });
+
+        map.addSource('jref-src', {
+          type: 'geojson',
+          data: jref
+        });
+
+        map.addSource('orf-src', {
+          type: 'geojson',
+          data: orf
+        });
+
+        map.addSource('tribal-src', {
+          type: 'geojson',
+          data: tribal
+        });
+
+
+
+
+
+        //declare layers
+
+        portsLayer = {
+          'id': 'ports-points',
+          'type': 'circle',
+          'source': 'ports-src',
+          'minzoom': 5,
+          'paint': {
+            'circle-color': '#0356A9',
+            'circle-radius': 7,
+            'circle-opacity': 0.7,
+            
+          }
+        };
+
+        ports2Layer = {
+          'id': 'ports2-points',
+          'type': 'circle',
+          'source': 'ports2-src',
+          'minzoom': 5,
+          'paint': {
+            'circle-color': '#0356A9',
+            'circle-radius': 7,
+            'circle-opacity': 0.7,
+            
+          }
+        };
+
+        refineLayer = {
+          'id': 'refine-points',
+          'type': 'circle',
+          'source': 'refine-src',
+          'minzoom': 1,
+          'paint': {
+            'circle-color': '#424242',
+            'circle-radius': 5,
+            'circle-opacity': 0.4,
+          }
+        };
+
+
+        trafficLayer = {
+          'id': 'traffic-polygons',
+          'type': 'fill',
+          'source': 'traffic-src',
+          'minzoom': 5,
+          'paint': {
+            'fill-color': '#4590DA',
+            'fill-opacity': 0.2
+
+          }
+        };
+
+        tugLayer = {
+          'id': 'tug-points',
+          'type': 'circle',
+          'source': 'tug-src',
+          'minzoom': 5,
+          'paint': {
+            'circle-color': '#00cc00',
+            'circle-radius': 5,
+            'circle-opacity': 0.4,
+          }
+        };
+
+        vspillLayer = {
+          'id': 'vspill-points',
+          'type': 'circle',
+          'source': 'vspill-src',
+          'minzoom': 5,
+          'paint': {
+            'circle-color': '#cc0000',
+            'circle-radius': 7,
+            'circle-opacity': 0.5,
+          }
+        };
+
+        respondLayer = {
+          'id': 'respond-points',
+          'type': 'circle',
+          'source': 'respond-src',
+          'minzoom': 5,
+          'paint': {
+            'circle-color': '#00cc00',
+            'circle-radius': 3,
+            'circle-opacity': 0.4,
+          }
+        };
+
+        incomeLayer = {
+          'id': 'income-polygons',
+          'type': 'fill',
+          'source': 'income-src',
+          'minzoom': 5,
+          'paint': {
+            'fill-color': '#0000ff',
+            'fill-opacity': 0.2
+
+          }
+        };
+
+        jrefLayer = {
+          'id': 'jref-points',
+          'type': 'circle',
+          'source': 'jref-src',
+          'minzoom': 1,
+          'paint': {
+            'circle-color': '#424242',
+            'circle-radius': 5,
+            'circle-opacity': 1,
+          }
+        };
+
+        orfLayer = {
+          'id': 'orf-points',
+          'type': 'circle',
+          'source': 'orf-src',
+          'minzoom': 1,
+          'paint': {
+            'circle-color': '#424242',
+            'circle-radius': 5,
+            'circle-opacity': 1,
+          }
+        };
+
+        tribalLayer = {
+          'id': 'tribal-polygons',
+          'type': 'fill',
+          'source': 'tribal-src',
+          'minzoom': 5,
+          'paint': {
+            'fill-color': '#00cc00',
+            'fill-opacity': 0.2
+
+          }
+        };
+
+
+
+        // 9. Initialize the script panel
+        scriptPanel
+          .setup({
+            step: ".scene", // all the scenes.
+            offset: 0.33, // the location of the enter and exit trigger
+            debug: false // toggler on or off the debug mode.
+          })
+          .onStepEnter(handleSceneEnter)
+          .onStepExit(handleSceneExit);
+        
+        // 10. This function performs when a scene enters the storyboard
+        function handleSceneEnter(response) {
+
+          var index = response.index; // capture the id of the current scene. 
+
+          // Refinaries
+          
+          if (index === 0) {
+            //Relocate to Seattle
+            map.flyTo({
+              center: [-124.8, 48.3],
+              zoom: 7.5,
+              pitch: 10,
+              speed: 0.5
+
+            });
+
+            if (typeof (map.getSource('ports2-src')) == 'undefined') {
+              map.addSource('ports2-src', {
+                type: 'geojson',
+                data: ports2
+              });
+            } else {
+              map.getSource('ports2-src').setData(ports2);
+
+            }
+
+            if (!map.getLayer("ports2-points")) {
+              map.addLayer(ports2Layer);
+            }
+            document.getElementById("cover").style.visibility = "hidden"; // Hide the cover page
+
+            if (typeof (map.getSource('traffic-src')) == 'undefined') {
+              map.addSource('traffic-src', {
+                type: 'geojson',
+                data: traffic
+              });
+              
+
+            } else {
+              map.getSource('traffic-src').setData(traffic);
+
+            }
+
+            if (!map.getLayer("traffic-polygons")) {
+              map.addLayer(trafficLayer);
+            }
+            document.getElementById("cover").style.visibility = "hidden"; // Hide the cover page
+
+          } else if (index === 1) {
+            map.flyTo({
+              center: [-126, 48.3],
+              zoom: 7.5,
+              pitch: 10,
+              speed: 0.5
+
+            });
+
+            if (typeof (map.getSource('tug-src')) == 'undefined') {
+              map.addSource('tug-src', {
+                type: 'geojson',
+                data: tug
+              });
+            } else {
+              map.getSource('tug-src').setData(tug);
+
+            }
+
+            if (!map.getLayer("tug-points")) {
+              map.addLayer(tugLayer);
+            }
+            document.getElementById("cover").style.visibility = "hidden"; // Hide the cover page
+
+          }else if (index === 2) { // When enter the first scene
+
+            map.flyTo({
+              center: [-124.6, 47.6131229],
+              zoom: 6.2,
+              pitch: 0,
+              speed: 0.5
+            }); // fly to a new location
+            
+            if (typeof (map.getSource('refine-src')) == 'undefined') { //if the map source 'counties-src' does not exist
+              map.addSource('refine-src', {
+                type: 'geojson',
+                data: refine
+              }); // reload the map source of 'counties-src'
+            } else {
+              map.getSource('refine-src').setData(refine); // if the map source does not exist, relaod the data counties to the pre-defined map source 'counties-src'.
+
+            }
+
+            if (!map.getLayer("refine-points")) { // if the map layer 'counties-polygons' does not exit
+              map.addLayer(refineLayer);
+            }
+            document.getElementById("cover").style.visibility = "hidden"; // Hide the cover page
+
+            if (typeof (map.getSource('jref-src')) == 'undefined') { //if the map source 'counties-src' does not exist
+              map.addSource('jref-src', {
+                type: 'geojson',
+                data: jref
+              }); // reload the map source of 'counties-src'
+            } else {
+              map.getSource('jref-src').setData(jref); // if the map source does not exist, relaod the data counties to the pre-defined map source 'counties-src'.
+
+            }
+
+            if (!map.getLayer("jref-points")) { // if the map layer 'counties-polygons' does not exit
+              map.addLayer(jrefLayer);
+            }
+            document.getElementById("cover").style.visibility = "hidden"; // Hide the cover page
+        
+
+            // Ports
+          } else if (index === 3) { // When enter the second scene.
+            map.flyTo({
+              center: [-123, 48],
+              zoom: 7.7,
+              pitch: 0,
+              speed: 0.5
+            });
+
+            if (typeof (map.getSource('orf-src')) == 'undefined') {
+              map.addSource('orf-src', {
+                type: 'geojson',
+                data: orf
+              });
+            } else {
+              map.getSource('orf-src').setData(orf);
+
+            }
+
+            if (!map.getLayer("orf-points")) {
+              map.addLayer(orfLayer);
+            }
+
+            if (typeof (map.getSource('tribal-src')) == 'undefined') {
+              map.addSource('tribal-src', {
+                type: 'geojson',
+                data: tribal
+              });
+              
+
+            } else {
+              map.getSource('tribal-src').setData(tribal);
+
+            }
+
+            if (!map.getLayer("tribal-polygons")) {
+              map.addLayer(tribalLayer);
+            }
+            
+          } else if (index === 4) { // When enter the second scene.
+            map.flyTo({
+              center: [-124, 47],
+              zoom: 8,
+              pitch: 50,
+              speed: 0.5
+            });
+
+            if (typeof (map.getSource('ports-src')) == 'undefined') {
+              map.addSource('ports-src', {
+                type: 'geojson',
+                data: ports
+              });
+            } else {
+              map.getSource('ports-src').setData(ports);
+
+            }
+
+            if (!map.getLayer("ports-points")) {
+              map.addLayer(portsLayer);
+            }
+
+            if (typeof (map.getSource('income-src')) == 'undefined') {
+              map.addSource('income-src', {
+                type: 'geojson',
+                data: income
+              });
+              
+
+            } else {
+              map.getSource('income-src').setData(income);
+
+            }
+
+            if (!map.getLayer("income-polygons")) {
+              map.addLayer(incomeLayer);
+            }
+            
+          } else if (index === 5) {
+            map.flyTo({
+              center: [-122.75, 48.5],
+              zoom: 10,
+              pitch: 0,
+              speed: 0.5
+
+            });
+
+            if (typeof (map.getSource('vspill-src')) == 'undefined') {
+              map.addSource('vspill-src', {
+                type: 'geojson',
+                data: vspill
+              });
+            } else {
+              map.getSource('vspill-src').setData(vspill);
+
+            }
+
+            if (!map.getLayer("vspill-points")) {
+              map.addLayer(vspillLayer);
+            }
+            document.getElementById("cover").style.visibility = "hidden"; // Hide the cover page
+
+            if (typeof (map.getSource('tribal-src')) == 'undefined') {
+              map.addSource('tribal-src', {
+                type: 'geojson',
+                data: tribal
+              });
+            } else {
+              map.getSource('tribal-src').setData(tribal);
+
+            }
+
+            if (!map.getLayer("tribal-polygons")) {
+              map.addLayer(tribalLayer);
+            }
+            document.getElementById("cover").style.visibility = "hidden"; // Hide the cover page
+
+            if (typeof (map.getSource('orf-src')) == 'undefined') {
+              map.addSource('orf-src', {
+                type: 'geojson',
+                data: orf
+              });
+            } else {
+              map.getSource('orf-src').setData(orf);
+
+            }
+
+            if (!map.getLayer("orf-points")) {
+              map.addLayer(orfLayer);
+            }
+            document.getElementById("cover").style.visibility = "hidden"; // Hide the cover page
+
+          } 
+          // else if (index === 6) {
+          //   map.flyTo({
+          //     center: [-124, 47],
+          //     zoom: 8,
+          //     pitch: 50,
+          //     speed: 0.5
+
+          //   });
+
+          //   if (typeof (map.getSource('respond-src')) == 'undefined') {
+          //     map.addSource('respond-src', {
+          //       type: 'geojson',
+          //       data: respond
+          //     });
+          //   } else {
+          //     map.getSource('respond-src').setData(respond);
+
+          //   }
+
+          //   if (!map.getLayer("respond-points")) {
+          //     map.addLayer(respondLayer);
+          //   }
+          //   document.getElementById("cover").style.visibility = "hidden"; // Hide the cover page
+
+          // }
+          else if (index === 8) {
+
+            map.flyTo({
+              center: [-122.4121036, 47.6131229],
+              zoom: 7,
+              pitch: 0,
+              speed: 0.5
+
+            });
+
+
+          }
+
+
+
+        }
+
+        
+
+        // 11. This function performs when a scene exists the storyboard
+        function handleSceneExit(response) {
+          var index = response.index;
+
+          if (index === 0) {
+            if (map.getLayer("traffic-polygons")) {
+              map.removeLayer('traffic-polygons');
+            }
+            if (map.getLayer("ports2-points")) {
+              map.removeLayer('ports2-points');
+            }
+
+            if (response.direction == 'down') { 
+              document.getElementById("cover").style.visibility = "hidden"; // when you scroll down, the cover page will be hided.
+            } else {
+              document.getElementById("cover").style.visibility = "visible"; // when you scroll up, the cover page will be shown.
+            } 
+
+          } else if (index === 1) {
+            if (map.getLayer("tug-points")) {
+              map.removeLayer('tug-points');
+            }
+            if (response.direction == 'down') { 
+              document.getElementById("cover").style.visibility = "hidden"; // when you scroll down, the cover page will be hided.
+            } else {
+              document.getElementById("cover").style.visibility = "visible"; // when you scroll up, the cover page will be shown.
+            } 
+
+          } else if (index === 2) {
+            if (map.getLayer("refine-points")) {
+              map.removeLayer('refine-points');
+            }
+            if (map.getLayer("jref-points")) {
+              map.removeLayer('jref-points');
+            }
+            if (response.direction == 'down') { 
+              document.getElementById("cover").style.visibility = "hidden"; // when you scroll down, the cover page will be hided.
+            } else {
+              document.getElementById("cover").style.visibility = "visible"; // when you scroll up, the cover page will be shown.
+            } 
+            
+
+          } else if (index === 3) {
+            if (map.getLayer("orf-points")) {
+              map.removeLayer('orf-points');
+            }
+            if (map.getLayer("tribal-polygons")) {
+              map.removeLayer('tribal-polygons');
+            }
+
+            if (response.direction == 'down') { 
+              document.getElementById("cover").style.visibility = "hidden"; // when you scroll down, the cover page will be hided.
+            } else {
+              document.getElementById("cover").style.visibility = "visible"; // when you scroll up, the cover page will be shown.
+            } 
+
+          } else if (index === 4) {
+            if (map.getLayer("ports-points")) {
+              map.removeLayer('ports-points');
+            }
+            if (map.getLayer("income-polygons")) {
+              map.removeLayer('income-polygons');
+            }
+
+            if (response.direction == 'down') { 
+              document.getElementById("cover").style.visibility = "hidden"; // when you scroll down, the cover page will be hided.
+            } else {
+              document.getElementById("cover").style.visibility = "visible"; // when you scroll up, the cover page will be shown.
+            } 
+
+          } else if (index === 5) {
+            if (map.getLayer("vspill-points")) {
+              map.removeLayer('vspill-points');
+            }
+            if (map.getLayer("tribal-polygons")) {
+              map.removeLayer('tribal-polygons');
+            }
+            if (map.getLayer("orf-points")) {
+              map.removeLayer('orf-points');
+            }
+            if (response.direction == 'down') { 
+              document.getElementById("cover").style.visibility = "hidden"; // when you scroll down, the cover page will be hided.
+            } else {
+              document.getElementById("cover").style.visibility = "visible"; // when you scroll up, the cover page will be shown.
+            } 
+
+          } 
+          // else if (index === 6) {
+          //   if (map.getLayer("respond-points")) {
+          //     map.removeLayer('respond-points');
+          //   }
+          //   if (response.direction == 'down') { 
+          //     document.getElementById("cover").style.visibility = "hidden"; // when you scroll down, the cover page will be hided.
+          //   } else {
+          //     document.getElementById("cover").style.visibility = "visible"; // when you scroll up, the cover page will be shown.
+          //   } 
+
+          // } 
+        
+        }
+
+
+    };
+    // Define a popup variable for tribal and wetland data
+    
+    let refinePopup = new mapboxgl.Popup({
+      closeButton: true,
+      closeOnClick: true
+    });
+    
+    let vspillPopup = new mapboxgl.Popup({
+      closeButton: true,
+      closeOnClick: true
+    });
+
+    let portsPopup = new mapboxgl.Popup({
+      closeButton: true,
+      closeOnClick: true
+    });
+
+    let ports2Popup = new mapboxgl.Popup({
+      closeButton: true,
+      closeOnClick: true
+    });
+
+    let trafficPopup = new mapboxgl.Popup({
+      closeButton: true,
+      closeOnClick: true
+    });
+
+    let tribalPopup = new mapboxgl.Popup({
+      closeButton: true,
+      closeOnClick: true
+    });
+
+    let tugPopup = new mapboxgl.Popup({
+      closeButton: true,
+      closeOnClick: true
+    });
+
+    let jrefPopup = new mapboxgl.Popup({
+      closeButton: true,
+      closeOnClick: true
+    });
+
+    let orfPopup = new mapboxgl.Popup({
+      closeButton: true,
+      closeOnClick: true
+    });
+
+    let incomePopup = new mapboxgl.Popup({
+      closeButton: true,
+      closeOnClick: true
+    });
+    
+
+    // SPILLS
+    map.on('click', 'vspill-points', function(e) {
+      let feature = e.features[0];
+      let popupContent = `<h3>${feature.properties.CaseName}</h3>
+                          <p>Date: ${feature.properties.Date_incid}</p>
+                          <p>Vessel Type: ${feature.properties.Source}</p>
+                          <p>Oil Type: ${feature.properties.Oil_type}</p>`;
+      vspillPopup.setLngLat(e.lngLat).setHTML(popupContent).addTo(map);
+    });
+
+    map.on('mouseenter', 'vspill-points', function() {
+      map.getCanvas().style.cursor = 'pointer';
+    });
+
+    map.on('mouseleave', 'vspill-points', function() {
+      map.getCanvas().style.cursor = '';
+    });
+
+    // REFINARIES
+    map.on('click', 'refine-points', function(e) {
+      let feature = e.features[0];
+      let popupContent = `<h3>${feature.properties.FacilityNa}</h3>
+                          <p>Oil Type: ${feature.properties.OilProduct}</p>`;
+      refinePopup.setLngLat(e.lngLat).setHTML(popupContent).addTo(map);
+    });
+
+    map.on('mouseenter', 'refine-points', function() {
+      map.getCanvas().style.cursor = 'pointer';
+    });
+
+    map.on('mouseleave', 'refine-points', function() {
+      map.getCanvas().style.cursor = '';
+    });
+
+
+    // Ports
+    map.on('click', 'ports-points', function(e) {
+      let feature = e.features[0];
+      let popupContent = `<h3>${feature.properties.NAME}</h3>
+                          <p>Oil Type: ${feature.properties.TYPE}</p>`;
+      portsPopup.setLngLat(e.lngLat).setHTML(popupContent).addTo(map);
+    });
+
+    map.on('mouseenter', 'ports-points', function() {
+      map.getCanvas().style.cursor = 'pointer';
+    });
+
+    map.on('mouseleave', 'ports-points', function() {
+      map.getCanvas().style.cursor = '';
+    });
+
+    map.on('click', 'ports2-points', function(e) {
+      let feature = e.features[0];
+      let popupContent = `<h3>${feature.properties.NAME}</h3>
+                          <p>Oil Type: ${feature.properties.TYPE}</p>`;
+      ports2Popup.setLngLat(e.lngLat).setHTML(popupContent).addTo(map);
+    });
+
+    map.on('mouseenter', 'ports2-points', function() {
+      map.getCanvas().style.cursor = 'pointer';
+    });
+
+    map.on('mouseleave', 'ports2-points', function() {
+      map.getCanvas().style.cursor = '';
+    });
+
+
+    // Traffic
+    map.on('click', 'traffic-polygons', function(e) {
+      let feature = e.features[0];
+      let popupContent = `<h3>2020 Vessel Traffic</h3>`;
+
+      trafficPopup.setLngLat(e.lngLat).setHTML(popupContent).addTo(map);
+    });
+
+    map.on('mouseenter', 'traffic-polygons', function() {
+      map.getCanvas().style.cursor = 'pointer';
+    });
+
+    map.on('mouseleave', 'traffic-polygons', function() {
+      map.getCanvas().style.cursor = '';
+    });
+
+    // Tribal
+    map.on('click', 'tribal-polygons', function(e) {
+      let feature = e.features[0];
+      let popupContent = `<h3>${feature.properties.TRIBAL_NM1}</h3>`;
+
+      tribalPopup.setLngLat(e.lngLat).setHTML(popupContent).addTo(map);
+    });
+
+    map.on('mouseenter', 'tribal-polygons', function() {
+      map.getCanvas().style.cursor = 'pointer';
+    });
+
+    map.on('mouseleave', 'tribal-polygons', function() {
+      map.getCanvas().style.cursor = '';
+    });
+
+    // Tug
+
+    map.on('click', 'tug-points', function(e) {
+      let feature = e.features[0];
+      let popupContent = `<h3>Vessel Name: ${feature.properties.VesselName}</h3>
+                          <p>Cause: ${feature.properties.CaseName}</p>
+                          <p>Date: ${feature.properties.IncidentDa}</p>`;
+      tugPopup.setLngLat(e.lngLat).setHTML(popupContent).addTo(map);
+    });
+
+    map.on('mouseenter', 'tug-points', function() {
+      map.getCanvas().style.cursor = 'pointer';
+    });
+
+    map.on('mouseleave', 'tug-points', function() {
+      map.getCanvas().style.cursor = '';
+    });
+
+    // Just Refineries
+    map.on('click', 'jref-points', function(e) {
+      let feature = e.features[0];
+      let popupContent = `<h3>Name: ${feature.properties.NAME}</h3>
+                          <p>Type: ${feature.properties.TYPE}</p>`;
+      jrefPopup.setLngLat(e.lngLat).setHTML(popupContent).addTo(map);
+    });
+
+    map.on('mouseenter', 'jref-points', function() {
+      map.getCanvas().style.cursor = 'pointer';
+    });
+
+    map.on('mouseleave', 'jref-points', function() {
+      map.getCanvas().style.cursor = '';
+    });
+
+    // Olympic Refineries
+    map.on('click', 'orf-points', function(e) {
+      let feature = e.features[0];
+      let popupContent = `<h3>Name: ${feature.properties.NAME}</h3>
+                          <p>Type: ${feature.properties.TYPE}</p>`;
+      orfPopup.setLngLat(e.lngLat).setHTML(popupContent).addTo(map);
+    });
+
+    map.on('mouseenter', 'orf-points', function() {
+      map.getCanvas().style.cursor = 'pointer';
+    });
+
+    map.on('mouseleave', 'orf-points', function() {
+      map.getCanvas().style.cursor = '';
+    });
+
+    // Income
+    map.on('click', 'income-polygons', function(e) {
+      let feature = e.features[0];
+      let popupContent = `<h3>Low-income Percent: ${feature.properties.LOWMODPCT}%</h3>`;
+      incomePopup.setLngLat(e.lngLat).setHTML(popupContent).addTo(map);
+    });
+
+    map.on('mouseenter', 'income-polygons', function() {
+      map.getCanvas().style.cursor = 'pointer';
+    });
+
+    map.on('mouseleave', 'income-polygons', function() {
+      map.getCanvas().style.cursor = '';
+    });
+
+
+
+
+
+
+
+    const nav = new mapboxgl.NavigationControl();
+    map.addControl(nav, 'top-right');
+
+
+
+
+
+    // 5 call the data loading function.
+    geojsonFetch();
+  </script>
+</body>
+
+</html>
+
+  
+<style>
+@media (max-width: 767px) {
+  #intro {
+    width: 90% !important;
+    left: 50% !important;
+    transform: translateX(-50%) translateY(-50%) !important;
+  }
+
+  .fullscreen-video, .fullscreen {
+    object-fit: cover;
+    width: 100% !important;
+    height: 100% !important;
+  }
+
+  .scene {
+    max-width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding: 1rem !important;
+  }
+
+  h1, h2, h3, h4, h5, p, ul, li {
+    font-size: 16px !important;
+    padding: 0 10px !important;
+  }
+}
+</style>

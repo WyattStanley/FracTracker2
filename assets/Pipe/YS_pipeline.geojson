@@ -1,0 +1,9 @@
+{
+"type": "FeatureCollection",
+"name": "YS_pipeline",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "id": 1, "Name": "Yellowstone", "Type": "Patrolium" }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ -117.04817, 47.72241 ], [ -117.36013, 47.72897 ], [ -119.28065, 47.18186 ] ] ] } },
+{ "type": "Feature", "properties": { "id": 2, "Name": "Cheveron_Pipeline", "Type": "NA" }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ -117.35658, 47.72768 ], [ -117.88676, 47.46795 ], [ -119.07854, 46.23147 ], [ -118.8369, 45.995 ] ] ] } }
+]
+}

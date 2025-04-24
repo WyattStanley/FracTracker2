@@ -1,0 +1,1441 @@
+<!DOCTYPE html>
+<html> 
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="description" content="Wyatt Stanley" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+
+  <title>Wyatt Stanley</title>
+  <!-- <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,400;0,500;1,400;1,500&display=swap" /> -->
+  <!-- <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/v2.8.1/mapbox-gl.css"> -->
+  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css"> -->
+  <link rel="stylesheet" href="map.css">
+  <script src="https://unpkg.com/scrollama"></script>
+  <script src="https://api.mapbox.com/mapbox-gl-js/v2.8.1/mapbox-gl.js"></script>
+</head>
+
+<body>
+
+    <div class="topnav" id="myTopnav">
+
+        <a href="index.html">Home</a>
+        <a href="pipe.html">Pipelines</a>
+        <a class="active" href="train.html">Trains</a>
+        <a href="water.html">Vessels</a>
+
+
+        <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links on smaller screens -->
+        <a href="javascript:void(0);" class="icon">
+            <i class="fa fa-bars"></i>
+        </a>
+    </div>
+
+  <!-- loading a video cover page -->
+  <section id="cover">
+    <!-- loading a video as the background -->
+
+    <style>
+        .fullscreen-video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    </style>
+    
+    <!-- <video class="fullscreen-video" playsinline="" autoplay="" muted="" loop="">
+      <source src="video/Train2.mp4" type="video/mp4">
+    </video> -->
+    <img src="video/Train.png" class="fullscreen-video">
+
+
+    <div id="intro">
+      <h1>Trains</h1>
+      <h5>Washington Crude Oil Spill Risk</h5>
+
+
+      <div class="footnote">
+        <!-- <span><a href="https://stock.adobe.com">Video Source</a></span> -->
+      </div>
+    </div>
+  </section>
+  <!-- a geonarrative will have two major components, a storyboard and a script panel of a series of scenes/actions -->
+  <section id="geonarrative">
+    <!-- a storymap can present differnt types of objects, like map, chart, diagram, etc. -->
+    <div id="storyboard">
+      <!-- create the place holder element for map -->
+      <div id="map"></div>
+    </div>
+
+    <article class="scene" data-scene="0">
+      <h2>1: Oil Transportation by Train</h2>
+        <p>
+            Virtually all oil received in Washington prior to train transportation was received by ship or pipeline.  The increased amount of oil 
+            transported by trains introduces risk to the communities and environments surrounding these tracks.
+        </p>
+        <p>
+            <ul>
+               <li>The transportation of crude oil by train in Washington began in 2012 
+                <a href="https://wsdot.wa.gov/sites/default/files/2021-10/2019-2040-State-Rail-Plan.pdf" target="_blank">(WSDOT. pg. 2)</a>.</li> 
+                <br>
+               <li>In 2018, <b>27.8% or (59.6 bbls)</b> of all Washington oil was transported by train 
+                <a href="https://wsdot.wa.gov/sites/default/files/2021-10/2019-2040-State-Rail-Plan.pdf" target="_blank">(WSDOT. pg. 76)</a>.</li> 
+                <br>
+               <li>The oil comes from Bakken oil fields in North Dakota, Montana, and Canada (WSDOT. pg. 76).</li> 
+               <br>
+               <li>Washington Dept of Transportation says, “...rail shipment has provided a quicker, more flexible alternative" (WSDOT. pg. 76).</li> 
+            </ul>
+        </p>
+        <p>
+            This map contains Washington train rail data and Washington oil refinery data. 
+            <br>
+            <br>
+            The map also displays train routes that carry crude oil and natural gas products, along with Washington oil refinery locations.
+            <br>
+            <br>
+            Click the points to display refinery information.   
+            <br>
+            <br>
+            <b>Please refresh the page if map layers are not showing.</b>
+        </p>
+    </article>
+    <article class="scene" data-scene="1">
+      <h2>2: Population and Waterway risk</h2>
+        <p>
+            "Routes that carry oil by train pass through large cities, populated areas, and natural areas in Washington. 
+            Large segments of the rail routes travel along the I-5 corridor, 
+            and cross or run next to major waterways, including the Columbia River and Puget Sound" <a href="https://www.biologicaldiversity.org/campaigns/oil_trains/methodology.html" target="_blank">(WSDOT. pg. 2)</a>. 
+            Oil transported by train introduces risk to the following areas:
+            <br>
+            
+            <ul>
+                <li>Populated residential areas and vulnerable communities.</li>
+                 <br>
+                
+                <li>Waterways that host culturally significant species and habitat.</li>
+                 <br>
+                 
+                <li>Wetlands and other natural ecosystems.</li> 
+            </ul>
+        </p>
+        <p>
+            Scroll north and south along the train line to see the rail's proximity to the Columbia River, the Puget Sound, and population 
+            centers such as Seattle, Tacoma, Bellingham, Vancouver, etc.
+        </p>
+    </article>
+    <article class="scene" data-scene="2">
+      <h2>3: Impact on Seattle Residential Areas</h2>
+        <p>
+            "While regulatory agencies and first responders have been prepared for the potential risks associated with shipping 
+            oil by ship or pipeline, shipment of oil by rail presents new risks related to spills. Several explosive derailments 
+            involving trains carrying Bakken oil have raised concerns about the volatility of the oil and the potential effect of 
+            a derailment in Washington communities" (WSDOT. pg. 76).
+            <br>
+            <br>
+            "A one-mile or more evacuation zone can result when there are explosions and fires involving multiple tanker cars that 
+            can produce extensive plumes of toxic fumes, smoke, particulate matter and heat at significant distances from burning 
+            oil tankers" <a href="https://www.biologicaldiversity.org/campaigns/oil_trains/methodology.html" target="_blank">(Center for Biological Diversity)</a>.
+        </p>
+
+        <ul>
+            <li>A half mile evacuation zone is recommended when a train derails, but it is extended to one mile when oil is spilled.</li>
+             <br>
+            <li>Oil fires represent a risk to communities living within a mile from the track.</li>
+             <br>
+            <li>In Seattle alone, <b>21,287</b> single and multi-family homes are within one mile radius of the track running through their 
+                city. </li> 
+             <br>
+            <li>If an oil tanker were to derail in Seattle, tens of thousands of people could be injured and many millions of dollars in property damage could occur.</li>
+        </ul>
+    
+        <p>
+            This map contains Seattle, Washington single and muli-family <a href="https://data-seattlecitygis.opendata.arcgis.com/datasets/single-and-multi-family-residential/explore" target="_blank">home data.</a> 
+            
+        </p>
+        
+    </article>
+
+    <article class="scene" data-scene="3">
+      <h2>4: Spills into Waterways</h2>
+        <p>
+            Protecting waterways such as the Puget Sound becomes increasingly important when considering the significance of the 
+            species that live within them. An oil spill could have irreversible damage on nearshore salmon habitat and resident 
+            killer whale habitat.
+        </p>
+        <ul>
+            <li>Other threats to the health of the Puget Sound include “pulp, paper mills, oil refineries, ports, boatyards, and storm-water runoff” <a href="https://www.nwf.org/en/Magazines/National-Wildlife/2006/Orcas-on-the-Edge">(Olsen, 2022, p. 3)</a>, 
+                that cause the degradation of freshwater habitats <a href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0270523">(Couture, 2022)</a></li>.
+             <br>
+            <li>In the spring, salmon make up the entire diet of north resident killer whales <a href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0247031">(Hanson, 2021)</a>. Oil refineries that 
+                pollute salmon habitat have a direct impact on resident killer whale populations <a href="https://pubmed.ncbi.nlm.nih.gov/22096495/">(Williams, 2011)</a>.
+            </li> 
+             <br>
+            <li>Without sufficient salmon abundance in Washington, population recovery for these whales is impossible (Hanson, 2021).</li>
+             <br>
+            <li>Killer whales are a cultural and historical icon to the Pacific Northwest, living together with indigenous people in 
+                the Puget Sound for 5,000 years <a href="https://www.epa.gov/salish-sea/southern-resident-killer-whales">(EPA, 2023)</a>. Damaging the habitat of historically abundant food sources will 
+                continue to endanger the resident killer whale.</li>
+             <br>
+            <li>Washington's regulatory code RCW 88.16.190 states that “...a catastrophic spill would inflict potentially irreversible damage on the endangered southern resident killer whales” <a href="https://app.leg.wa.gov/rcw/default.aspx?cite=88.16.190">(Washington State Legislature)</a> </li>.
+            
+        </ul>
+        <p>This map includes <a href="https://geo.wa.gov/datasets/34764715c1254a639b831f3c9de92417_3/explore?location=47.879878%2C-122.234538%2C8.70" target="_blank">Puget Sound Data.</a>.</p>
+    </article>
+
+    <article class="scene" data-scene="4">
+      <h2>5: Effects on Wetlands </h2>
+        <p>
+            Wetlands are a vital environmental asset to Washington state. "Wetlands are among the most productive ecosystem in the 
+            world, comparable to rain forests and coral reefs. An immense variety of species of microbes, plants, insects, amphibians, 
+            reptiles, birds, fish, and mammals can be part of a wetland system" <a href="https://www.epa.gov/wetlands/why-are-wetlands-important" target="_blank">(EPA)</a>.
+            <br>
+            <br>
+            
+            This map displays all Washington wetlands within one mile from the track, 
+            occupying <b>~120,000</b> square miles of at-risk wetland areas.
+    
+        <p>
+
+        <ul>
+            <li>Similarly to residential communities, wetlands could be damaged by toxic air pollution, smoke, and oil fires up to or more than one mile from the track. <a href="https://www.biologicaldiversity.org/campaigns/oil_trains/methodology.html" target="_blank">(Center for Biological Diversity)</a> </li>
+             <br>
+            <li>In Washington, <b>~10,000</b> wetlands are put at risk by train routes carrying oil.</li> 
+             <br>
+            <li><b>~120,000</b> square miles of wetland areas are put at risk by train routes carrying oil.</li>
+
+        </ul>
+        
+        <p>
+            Scroll along the train line to see the wetlands that are put at risk.
+
+            This map contains <a href="https://geo.wa.gov/datasets/02b250843e44485ea7d736b34fa80998_4/explore?location=47.630334%2C-120.819730%2C12.31" target="_blank">Wetlands Data.</a>
+        </p>
+        
+        
+        
+
+    </article>
+
+    <article class="scene" data-scene="5">
+      <h2>6: Tribal Land Intersect</h2>
+        <p>
+            This map displays the tribal areas that are within one mile of BNSF oil railway. These railways cut through tribal lands in Washington, 
+            subjecting these lands to the risk of waterway pollution, damage to protected fishing areas, risk of wetland pollution, and risk to residential areas. 
+            <br>
+            <br>
+            On top of environmental and population risk, BNSF oil railways have a history of treating these populations and areas with a lack of
+            respect.            
+        <p>
+        
+        <ul>
+            <li>In 2015, the Swinomish Indian Tribal Community were forced to file a suit against BNSF due to the breach of their 1991 agreement 
+                which limited their traffic to 25 cars a day. </li>
+             <br>
+            <li>"The railroad began delivering 100-car unit trains carrying Bakken crude oil to a nearby refinery in 2012, despite objections 
+                from tribal leaders." <a href="https://railfan.com/washington-tribe-wins-suit-against-bnsf/" target="_blank">(RailNews)</a></li> 
+             <br>
+            <li>"The case concluded against the backdrop of a March 16 derailment of two BNSF diesels and resulting in <b>3,100</b> gallons of fuel 
+                spilling into waters in which the tribe has treaty-protected fishing rights" <a href="https://railfan.com/washington-tribe-wins-suit-against-bnsf/" target="_blank">(RailNews)</a> </li>.
+        </ul>
+
+        <p>
+            Scroll and zoom in to see the BNSF rail lines that intersect Tribal Lands in Washington.
+            <br> 
+            <br>
+            This map includes <a href="https://www.arcgis.com/apps/View/index.html?appid=359a365f28014151a1ce821dd6f6745c" target="_blank">Tribal Lands Data</a>.
+        </p>
+
+
+    </article>
+
+    <article class="scene" data-scene="6">
+      <h2>7: Swinomish</h2>
+        <p>
+            This map shows the location of the BNSF oil spill that led to the conclusion of the Swinomish lawsuit. "The derailment in 
+            Washington occurred on a berm along Padilla Bay, on the Swinomish tribal reservation near Anacortes. Most of <b>5,000</b> gallons 
+            (nearly 19,000 liters) of spilled diesel fuel leaked on the land side of the berm rather than toward the water, according 
+            to the state Ecology Department" <a href="https://www.npr.org/2023/03/17/1164144347/trains-derail-in-arizona-and-washington-with-oil-spilled-on-puget-sound-tribal-l" target="_blank">(NPR)</a>.
+            <br>
+            <br>
+            <br>
+            <br>
+            <img class="img" src="img/Swinomish.png" style="width: 50%; height: auto; display: block; margin: 0 auto; box-shadow: 0px 4px 8px rgba(0, 0, 0, 1);"></img>
+            <center>
+                <a href="https://twitter.com/EcologyWA/status/1636351657650065409?lang=en" target="_blank">Photo Source:</a>
+            </center>
+        <p>
+    </article>
+
+    <article class="scene" data-scene="7">
+      <h2>8: Custer</h2>
+        <p>
+            This map shows the location of the BNSF train derailment that spilled oil in proximity to the Lummi tribal reservation. "At 
+            approximately 11:40 am on December 22, 2020 a BNSF train derailed at mile post 111.7 near Custer, WA. Ten rail cars 
+            derailed with several overturning, spilling Bakken crude oil. Three of those cars leaked oil and caught fire"
+            By Tuesday Jan 12th, "An estimated <b>28,962</b> gallons of oil were lost in the incident. Much of that amount burned up, 
+            evaporated or was recovered afterward, leaving <b>5,400</b> to <b>8,000</b> gallons unrecovered.<a href="https://www.npr.org/2023/03/17/1164144347/trains-derail-in-arizona-and-washington-with-oil-spilled-on-puget-sound-tribal-l" target="_blank">(NPR)</a>
+            <br>
+            <br>
+            <br>
+            <br>
+            <img class="img" src="img/custer.png" style="width: 50%; height: auto; display: block; margin: 0 auto; box-shadow: 0px 4px 8px rgba(0, 0, 0, 1);"></img>
+            <center>
+                <a href="https://twitter.com/EcologyWA/status/1636351657650065409?lang=en" target="_blank">Photo Source:</a>
+            </center>
+
+        <p>
+    </article>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+  </section>
+
+  <section id="footer">
+    <h2>Wyatt Stanley</h2>
+  </section>
+
+  <script>
+    // 1. Declare the maps, script panels, and different thematic layers.
+    let map, scriptPanel = scrollama(), trainLayer, train2Layer, train3Layer, train4Layer, train5Layer, train6Layer, train7Layer, train8Layer, houseLayer, psLayer, wetLayer, tribeLayer, full_tribe, singleLayer, spillsLayer, spills2Layer, full_tribe2Layer, refineLayer;
+
+    // 2. Intialize the layout.
+   
+    history.scrollRestoration = "manual"; // make sure the geo-narrative will be scrolled to the cover page even after a page refresh.
+    window.scrollTo(0, 0); // scroll the geo-narrative to the coverpage
+    adjustStoryboardlSize(); // force a browser window resize.
+    window.addEventListener("resize", adjustStoryboardlSize); // // ask the browser window listen to the resize event, thereby force a viewport resize whenever adjusting the window size.
+
+    // 3. Define Generic window resize listener event
+    function adjustStoryboardlSize() {
+
+      const scenes = document.getElementsByClassName("scene");
+      const storyboard = document.getElementById("storyboard");
+
+      // 3.1 determine the height of each scene element
+      let sceneH = Math.floor(window.innerHeight * 0.75);
+      for (const scene of scenes) {
+        scene.style.height = sceneH + "px";
+      }
+      
+      // 3.2 determin the height of the storyboard.
+      let storyboardHeight = window.innerHeight;
+      let storyboardMarginTop = (window.innerHeight - storyboardHeight) / 2;
+
+      storyboard.style.height = storyboardHeight + "px";
+      storyboard.style.top = storyboardMarginTop + "px"
+
+      // 3.3 tell scrollama/script panel to update new element dimensions
+      scriptPanel.resize();
+    }
+
+    // 4. Initialize the mapbox
+    mapboxgl.accessToken =
+      'pk.eyJ1IjoiamFrb2J6aGFvIiwiYSI6ImNpcms2YWsyMzAwMmtmbG5icTFxZ3ZkdncifQ.P9MBej1xacybKcDN_jehvw'; // Assign the access token
+   
+    map = new mapboxgl.Map({
+      container: 'map', // container ID
+      style: 'mapbox://styles/mapbox/light-v10',
+      zoom: 7, // starting zoom
+      minZoom: 3,
+      maxZoom: 10,
+      center: [-121.93, 47.33], // starting center
+      scrollZoom: false,
+      boxZoom: false,
+      doubleClickZoom: false
+    });  // Declare the map object
+
+    // An alternative way to disable map zoom when using scroll
+    // map.scrollZoom.disable();
+
+
+    // 5. define the asynchronous function to load geojson data and then performs the dependent actions.
+    async function geojsonFetch() {
+
+
+      // 6 wait till the data of washington counties and celltowers are fully loaded.
+      let response, train, train2, train3, train4, train5, train6, train7, train8, house, ps, wet, tribe, full_tribe, single, spills, spills2, full_tribe2, refine;
+      response = await fetch("assets/Train/Train.geojson");
+      train = await response.json();
+      response = await fetch("assets/Train/Train2.geojson");
+      train2 = await response.json();
+      response = await fetch("assets/Train/Train3.geojson");
+      train3 = await response.json();
+      response = await fetch("assets/Train/Train4.geojson");
+      train4 = await response.json();
+      response = await fetch("assets/Train/Train5.geojson");
+      train5 = await response.json();
+      response = await fetch("assets/Train/Train6.json");
+      train6 = await response.json();
+      response = await fetch("assets/Train/Train7.geojson");
+      train7 = await response.json();
+      response = await fetch("assets/Train/Train8.geojson");
+      train8 = await response.json();
+
+      response = await fetch("assets/Train/Housing.json");
+      house = await response.json();
+      response = await fetch("assets/Train/celltowers.json");
+      ps = await response.json();
+      response = await fetch("assets/Train/wetland.geojson");
+      wet = await response.json();
+      response = await fetch("assets/Train/tribal_int.json");
+      tribe = await response.json();
+      response = await fetch("assets/Train/Full_Tribal.json");
+      full_tribe = await response.json();
+      response = await fetch("assets/Train/single.geojson");
+      single = await response.json();
+      response = await fetch("assets/Train/crash.geojson");
+      spills = await response.json();
+      response = await fetch("assets/Train/crash2.geojson");
+      spills2 = await response.json();
+      response = await fetch("assets/Train/Full_Tribal2.json");
+      full_tribe2 = await response.json();
+      response = await fetch("assets/Water/refinaries.geojson");
+      refine = await response.json();
+
+
+
+
+
+      // 7. Trigger operations inside of the the ()=> {} funciton while loading the map.
+
+
+        // 8. add map source and declare layers.
+        map.addSource('train-src', {
+          type: 'geojson',
+          data: train
+        });
+
+        map.addSource('train2-src', {
+          type: 'geojson',
+          data: train2
+        });
+
+        map.addSource('train3-src', {
+          type: 'geojson',
+          data: train3
+        });
+
+        map.addSource('train4-src', {
+          type: 'geojson',
+          data: train4
+        });
+
+        map.addSource('train5-src', {
+          type: 'geojson',
+          data: train5
+        });
+
+        map.addSource('train6-src', {
+          type: 'geojson',
+          data: train6
+        });
+
+        map.addSource('train7-src', {
+          type: 'geojson',
+          data: train7
+        });
+
+        map.addSource('train8-src', {
+          type: 'geojson',
+          data: train8
+        });
+
+
+
+        map.addSource('house-src', {
+          type: 'geojson',
+          data: house
+        });
+
+        map.addSource('ps-src', {
+          type: 'geojson',
+          data: ps
+        });
+
+        map.addSource('wet-src', {
+          type: 'geojson',
+          data: wet
+        });
+
+        map.addSource('tribe-src', {
+          type: 'geojson',
+          data: tribe
+        });
+
+        map.addSource('full_tribe-src', {
+          type: 'geojson',
+          data: full_tribe
+        });
+
+        map.addSource('single-src', {
+          type: 'geojson',
+          data: single
+        });
+
+        map.addSource('spills-src', {
+          type: 'geojson',
+          data: spills
+        });
+
+        map.addSource('spills2-src', {
+          type: 'geojson',
+          data: spills2
+        });
+
+        map.addSource('full_tribe2-src', {
+          type: 'geojson',
+          data: full_tribe2
+        });
+
+        map.addSource('refine-src', {
+          type: 'geojson',
+          data: refine
+        });
+
+
+
+
+
+
+
+        //declare layers
+
+        trainLayer = {
+          'id': 'train-lines',
+          'type': 'line',
+          'source': 'train-src',
+          'minzoom': 5,
+          'paint': {
+            'line-color': '#000000',
+            'line-width': 1.5
+
+          }
+        };
+
+        train2Layer = {
+          'id': 'train2-lines',
+          'type': 'line',
+          'source': 'train2-src',
+          'minzoom': 5,
+          'paint': {
+            'line-color': '#000000',
+            'line-width': 1.5
+          }
+        };
+
+        train3Layer = {
+          'id': 'train3-lines',
+          'type': 'line',
+          'source': 'train3-src',
+          'minzoom': 5,
+          'paint': {
+            'line-color': '#000000',
+            'line-width': 1.5
+          }
+        };
+
+        train4Layer = {
+          'id': 'train4-lines',
+          'type': 'line',
+          'source': 'train4-src',
+          'minzoom': 5,
+          'paint': {
+            'line-color': '#000000',
+            'line-width': 1.5
+          }
+        };
+
+        train5Layer = {
+          'id': 'train5-lines',
+          'type': 'line',
+          'source': 'train5-src',
+          'minzoom': 5,
+          'paint': {
+            'line-color': '#000000',
+            'line-width': 1.5
+          }
+        };
+
+        train6Layer = {
+          'id': 'train6-lines',
+          'type': 'line',
+          'source': 'train6-src',
+          'minzoom': 5,
+          'paint': {
+            'line-color': '#000000',
+            'line-width': 1.5
+          }
+        };
+
+        train7Layer = {
+          'id': 'train7-lines',
+          'type': 'line',
+          'source': 'train7-src',
+          'minzoom': 5,
+          'paint': {
+            'line-color': '#000000',
+            'line-width': 1.5
+          }
+        };
+
+        train8Layer = {
+          'id': 'train8-lines',
+          'type': 'line',
+          'source': 'train8-src',
+          'minzoom': 5,
+          'paint': {
+            'line-color': '#000000',
+            'line-width': 1.5
+          }
+        };
+
+
+
+
+        houseLayer = {
+          'id': 'house-polygons',
+          'type': 'fill',
+          'source': 'house-src',
+          'minzoom': 5,
+          'paint': {
+            'fill-color': '#cc0000',
+            'fill-opacity': 0.5
+          }
+        };
+
+
+        psLayer = {
+          'id': 'ps-polygons',
+          'type': 'fill',
+          'source': 'ps-src',
+          'minzoom': 5,
+          'paint': {
+            'fill-color': '#4590DA',
+            'fill-opacity': 0.2
+
+          }
+        };
+
+        wetLayer = {
+          'id': 'wet-polygons',
+          'type': 'fill',
+          'source': 'wet-src',
+          'minzoom': 5,
+          'paint': {
+            'fill-color': '#1E7E14',
+            'fill-opacity': 0.5
+
+          }
+        };
+
+        tribeLayer = {
+          'id': 'tribe-polygons',
+          'type': 'fill',
+          'source': 'tribe-src',
+          'minzoom': 5,
+          'paint': {
+            'fill-color': '#cc0000',
+            'fill-opacity': 1
+          }
+        };
+
+        full_tribeLayer = {
+          'id': 'full_tribe-polygons',
+          'type': 'fill',
+          'source': 'full_tribe-src',
+          'minzoom': 5,
+          'paint': {
+            'fill-color': '#00cc00',
+            'fill-opacity': 0.3
+          }
+        };
+
+        singleLayer = {
+          'id': 'single-polygons',
+          'type': 'fill',
+          'source': 'single-src',
+          'minzoom': 5,
+          'paint': {
+            'fill-color': '#00cc00',
+            'fill-opacity': 0.3
+
+          }
+        };
+
+        spillsLayer = {
+          'id': 'spills-points',
+          'type': 'circle',
+          'source': 'spills-src',
+          'minzoom': 1,
+          'paint': {
+            'circle-color': '#cc0000',
+            'circle-radius': 5,
+            'circle-opacity': 0.8
+          }
+        };
+
+        spills2Layer = {
+          'id': 'spills2-points',
+          'type': 'circle',
+          'source': 'spills2-src',
+          'minzoom': 1,
+          'paint': {
+            'circle-color': '#cc0000',
+            'circle-radius': 5,
+            'circle-opacity': 0.8
+          }
+        };
+
+        full_tribe2Layer = {
+          'id': 'full_tribe2-polygons',
+          'type': 'fill',
+          'source': 'full_tribe2-src',
+          'minzoom': 5,
+          'paint': {
+            'fill-color': '#00cc00',
+            'fill-opacity': 0.3
+          }
+        };
+
+        refineLayer = {
+          'id': 'refine-points',
+          'type': 'circle',
+          'source': 'refine-src',
+          'minzoom': 1,
+          'paint': {
+            'circle-color': '#424242',
+            'circle-radius': 5,
+            'circle-opacity': 0.3
+          }
+        };
+
+
+
+        // 9. Initialize the script panel
+        scriptPanel
+          .setup({
+            step: ".scene", // all the scenes.
+            offset: 0.33, // the location of the enter and exit trigger
+            debug: false // toggler on or off the debug mode.
+          })
+          .onStepEnter(handleSceneEnter)
+          .onStepExit(handleSceneExit);
+        
+        // 10. This function performs when a scene enters the storyboard
+        function handleSceneEnter(response) {
+
+          var index = response.index; // capture the id of the current scene. 
+
+          // Refinaries
+          
+          if (index === 0) { // When enter the first scene
+
+            map.flyTo({
+              center: [-124.6, 47.6131229],
+              zoom: 6,
+              pitch: 0,
+              speed: 0.5
+            }); // fly to a new location
+            
+            if (typeof (map.getSource('train-src')) == 'undefined') { //if the map source 'counties-src' does not exist
+              map.addSource('train-src', {
+                type: 'geojson',
+                data: train
+              }); // reload the map source of 'counties-src'
+            } else {
+              map.getSource('train-src').setData(train); // if the map source does not exist, relaod the data counties to the pre-defined map source 'counties-src'.
+
+            }
+
+            if (!map.getLayer("train-lines")) { // if the map layer 'counties-polygons' does not exit
+              map.addLayer(trainLayer);
+            }
+            document.getElementById("cover").style.visibility = "hidden"; // Hide the cover page
+
+            if (typeof (map.getSource('refine-src')) == 'undefined') {
+              map.addSource('refine-src', {
+                type: 'geojson',
+                data: refine
+              });
+            } else {
+              map.getSource('refine-src').setData(refine);
+
+            }
+
+            if (!map.getLayer("refine-points")) {
+              map.addLayer(refineLayer);
+            }
+            document.getElementById("cover").style.visibility = "hidden"; // Hide the cover page
+        
+
+            // Ports
+          } else if (index === 1) { // When enter the second scene.
+
+            map.flyTo({
+              center: [-122.5, 47.5],
+              zoom: 10,
+              pitch: 65,
+              speed: 0.5
+            }); // fly to a new location
+            
+            if (typeof (map.getSource('train2-src')) == 'undefined') { //if the map source 'counties-src' does not exist
+              map.addSource('train2-src', {
+                type: 'geojson',
+                data: train2
+              }); // reload the map source of 'counties-src'
+            } else {
+              map.getSource('train2-src').setData(train2); // if the map source does not exist, relaod the data counties to the pre-defined map source 'counties-src'.
+
+            }
+
+            if (!map.getLayer("train2-lines")) { // if the map layer 'counties-polygons' does not exit
+              map.addLayer(train2Layer);
+            }
+            document.getElementById("cover").style.visibility = "hidden"; // Hide the cover page
+
+
+            
+          } else if (index === 2) {
+            //Relocate to Seattle
+            map.flyTo({
+              center: [-122.5, 47.6],
+              zoom: 20,
+              pitch: 20,
+              speed: 0.2
+
+            });
+
+            if (typeof (map.getSource('house-src')) == 'undefined') {
+              map.addSource('house-src', {
+                type: 'geojson',
+                data: house
+              });
+            } else {
+              map.getSource('house-src').setData(house);
+
+            }
+
+            if (!map.getLayer("house-polygons")) {
+              map.addLayer(houseLayer);
+            }
+            document.getElementById("cover").style.visibility = "hidden"; // Hide the cover page
+
+            if (typeof (map.getSource('train3-src')) == 'undefined') {
+              map.addSource('train3-src', {
+                type: 'geojson',
+                data: train3
+              });
+              
+
+            } else {
+              map.getSource('train3-src').setData(train3);
+
+            }
+
+            if (!map.getLayer("train3-lines")) {
+              map.addLayer(train3Layer);
+            }
+            document.getElementById("cover").style.visibility = "hidden"; // Hide the cover page
+
+          } else if (index === 3) {
+            map.flyTo({
+              center: [-123.1, 47.3],
+              zoom: 9.5,
+              pitch: 50,
+              speed: 0.5
+
+            });
+
+            if (typeof (map.getSource('ps-src')) == 'undefined') {
+              map.addSource('ps-src', {
+                type: 'geojson',
+                data: ps
+              });
+            } else {
+              map.getSource('ps-src').setData(ps);
+
+            }
+
+            if (!map.getLayer("ps-polygons")) {
+              map.addLayer(psLayer);
+            }
+            document.getElementById("cover").style.visibility = "hidden"; // Hide the cover page
+
+            if (typeof (map.getSource('train4-src')) == 'undefined') {
+              map.addSource('train4-src', {
+                type: 'geojson',
+                data: train4
+              });
+              
+
+            } else {
+              map.getSource('train4-src').setData(train4);
+
+            }
+
+            if (!map.getLayer("train4-lines")) {
+              map.addLayer(train4Layer);
+            }
+            document.getElementById("cover").style.visibility = "hidden"; // Hide the cover page
+
+          } else if (index === 4) {
+            map.flyTo({
+              center: [-123, 45.75],
+              zoom: 10,
+              pitch: 70,
+              speed: 0.5
+
+            });
+
+            if (typeof (map.getSource('wet-src')) == 'undefined') {
+              map.addSource('wet-src', {
+                type: 'geojson',
+                data: wet
+              });
+            } else {
+              map.getSource('wet-src').setData(wet);
+
+            }
+
+            if (!map.getLayer("wet-polygons")) {
+              map.addLayer(wetLayer);
+            }
+            document.getElementById("cover").style.visibility = "hidden"; // Hide the cover page
+
+            if (typeof (map.getSource('train5-src')) == 'undefined') {
+              map.addSource('train5-src', {
+                type: 'geojson',
+                data: train5
+              });
+              
+
+            } else {
+              map.getSource('train5-src').setData(train5);
+
+            }
+
+            if (!map.getLayer("train5-lines")) {
+              map.addLayer(train5Layer);
+            }
+            document.getElementById("cover").style.visibility = "hidden"; // Hide the cover page
+
+          } else if (index === 5) {
+            map.flyTo({
+              center: [-123, 47.6131229],
+              zoom: 7,
+              pitch: 0,
+              speed: 0.5
+
+            });
+
+            if (typeof (map.getSource('full_tribe-src')) == 'undefined') {
+              map.addSource('full_tribe-src', {
+                type: 'geojson',
+                data: full_tribe
+              });
+            } else {
+              map.getSource('full_tribe-src').setData(full_tribe);
+
+            }
+
+            if (!map.getLayer("full_tribe-polygons")) {
+              map.addLayer(full_tribeLayer);
+            }
+            document.getElementById("cover").style.visibility = "hidden"; // Hide the cover page
+
+            if (typeof (map.getSource('tribe-src')) == 'undefined') {
+              map.addSource('tribe-src', {
+                type: 'geojson',
+                data: tribe
+              });
+            } else {
+              map.getSource('tribe-src').setData(tribe);
+
+            }
+
+            if (!map.getLayer("tribe-polygons")) {
+              map.addLayer(tribeLayer);
+            }
+            document.getElementById("cover").style.visibility = "hidden"; // Hide the cover page
+
+            if (typeof (map.getSource('train6-src')) == 'undefined') {
+              map.addSource('train6-src', {
+                type: 'geojson',
+                data: train6
+              });
+              
+
+            } else {
+              map.getSource('train6-src').setData(train6);
+
+            }
+
+            if (!map.getLayer("train6-lines")) {
+              map.addLayer(train6Layer);
+            }
+            document.getElementById("cover").style.visibility = "hidden"; // Hide the cover page
+
+          } else if (index === 6) {
+            map.flyTo({
+              center: [-122.75, 48.44],
+              zoom: 10,
+              pitch: 0,
+              speed: 0.5
+            });
+
+            if (typeof (map.getSource('single-src')) == 'undefined') {
+              map.addSource('single-src', {
+                type: 'geojson',
+                data: single
+              });
+            } else {
+              map.getSource('single-src').setData(single);
+
+            }
+
+            if (!map.getLayer("single-polygons")) {
+              map.addLayer(singleLayer);
+            }
+            document.getElementById("cover").style.visibility = "hidden"; // Hide the cover page
+
+            if (typeof (map.getSource('spills-src')) == 'undefined') {
+              map.addSource('spills-src', {
+                type: 'geojson',
+                data: spills
+              });
+            } else {
+              map.getSource('spills-src').setData(spills);
+
+            }
+
+            if (!map.getLayer("spills-points")) {
+              map.addLayer(spillsLayer);
+            }
+            document.getElementById("cover").style.visibility = "hidden"; // Hide the cover page
+
+            if (typeof (map.getSource('train7-src')) == 'undefined') {
+              map.addSource('train7-src', {
+                type: 'geojson',
+                data: train7
+              });
+              
+
+            } else {
+              map.getSource('train7-src').setData(train7);
+
+            }
+
+            if (!map.getLayer("train7-lines")) {
+              map.addLayer(train7Layer);
+            }
+            document.getElementById("cover").style.visibility = "hidden"; // Hide the cover page
+
+
+          } else if (index === 7) {
+            map.flyTo({
+              center: [-122.7, 48.8],
+              zoom: 10,
+              pitch: 0,
+              speed: 0.5
+            });
+
+            if (typeof (map.getSource('full_tribe2-src')) == 'undefined') {
+              map.addSource('full_tribe2-src', {
+                type: 'geojson',
+                data: full_tribe2
+              });
+            } else {
+              map.getSource('full_tribe2-src').setData(full_tribe2);
+
+            }
+
+            if (!map.getLayer("full_tribe2-polygons")) {
+              map.addLayer(full_tribe2Layer);
+            }
+            document.getElementById("cover").style.visibility = "hidden"; // Hide the cover page
+
+            if (typeof (map.getSource('train8-src')) == 'undefined') {
+              map.addSource('train8-src', {
+                type: 'geojson',
+                data: train8
+              });
+              
+
+            } else {
+              map.getSource('train8-src').setData(train7);
+
+            }
+
+            if (!map.getLayer("train8-lines")) {
+              map.addLayer(train8Layer);
+            }
+            document.getElementById("cover").style.visibility = "hidden"; // Hide the cover page
+
+            if (typeof (map.getSource('spills2-src')) == 'undefined') {
+              map.addSource('spills2-src', {
+                type: 'geojson',
+                data: spills2
+              });
+            } else {
+              map.getSource('spills2-src').setData(spills2);
+
+            }
+
+            if (!map.getLayer("spills2-points")) {
+              map.addLayer(spills2Layer);
+            }
+            document.getElementById("cover").style.visibility = "hidden"; // Hide the cover page
+
+          
+          
+          
+          } else if (index === 8) {
+
+            map.flyTo({
+            center: [-122.4121036, 47.6131229],
+            zoom: 7,
+            pitch: 0,
+            speed: 0.5
+
+            });
+
+
+          }
+
+
+
+        }
+
+        
+
+        // 11. This function performs when a scene exists the storyboard
+        function handleSceneExit(response) {
+          var index = response.index;
+
+          if (index === 0) {
+            if (map.getLayer("train-lines")) {
+              map.removeLayer('train-lines');
+            }
+            if (map.getLayer("refine-points")) {
+              map.removeLayer('refine-points');
+            }
+            if (response.direction == 'down') { 
+              document.getElementById("cover").style.visibility = "hidden"; // when you scroll down, the cover page will be hided.
+            } else {
+              document.getElementById("cover").style.visibility = "visible"; // when you scroll up, the cover page will be shown.
+            } 
+
+          } else if (index === 1) {
+            if (map.getLayer("train2-lines")) {
+              map.removeLayer('train2-lines');
+            }
+
+            if (response.direction == 'down') { 
+              document.getElementById("cover").style.visibility = "hidden"; // when you scroll down, the cover page will be hided.
+            } else {
+              document.getElementById("cover").style.visibility = "visible"; // when you scroll up, the cover page will be shown.
+            } 
+
+          } else if (index === 2) {
+            if (map.getLayer("house-polygons")) {
+              map.removeLayer('house-polygons');
+            }
+            if (map.getLayer("train3-lines")) {
+              map.removeLayer('train3-lines');
+            }
+
+            if (response.direction == 'down') { 
+              document.getElementById("cover").style.visibility = "hidden"; // when you scroll down, the cover page will be hided.
+            } else {
+              document.getElementById("cover").style.visibility = "visible"; // when you scroll up, the cover page will be shown.
+            } 
+
+          } else if (index === 3) {
+            if (map.getLayer("ps-polygons")) {
+              map.removeLayer('ps-polygons');
+            }
+            if (map.getLayer("train4-lines")) {
+              map.removeLayer('train4-lines');
+            }
+            if (response.direction == 'down') { 
+              document.getElementById("cover").style.visibility = "hidden"; // when you scroll down, the cover page will be hided.
+            } else {
+              document.getElementById("cover").style.visibility = "visible"; // when you scroll up, the cover page will be shown.
+            } 
+
+          } else if (index === 4) {
+            if (map.getLayer("wet-polygons")) {
+              map.removeLayer('wet-polygons');
+            }
+            if (map.getLayer("train5-lines")) {
+              map.removeLayer('train5-lines');
+            }
+            if (response.direction == 'down') { 
+              document.getElementById("cover").style.visibility = "hidden"; // when you scroll down, the cover page will be hided.
+            } else {
+              document.getElementById("cover").style.visibility = "visible"; // when you scroll up, the cover page will be shown.
+            } 
+
+          } else if (index === 5) {
+            if (map.getLayer("full_tribe-polygons")) {
+              map.removeLayer('full_tribe-polygons');
+            }
+            if (map.getLayer("tribe-polygons")) {
+              map.removeLayer('tribe-polygons');
+            }
+            if (map.getLayer("train6-lines")) {
+              map.removeLayer('train6-lines');
+            }
+            if (response.direction == 'down') { 
+              document.getElementById("cover").style.visibility = "hidden"; // when you scroll down, the cover page will be hided.
+            } else {
+              document.getElementById("cover").style.visibility = "visible"; // when you scroll up, the cover page will be shown.
+            } 
+
+          } else if (index === 6) {
+            if (map.getLayer("single-polygons")) {
+              map.removeLayer('single-polygons');
+            }
+            if (map.getLayer("spills-points")) {
+              map.removeLayer('spills-points');
+            }
+            if (map.getLayer("train7-lines")) {
+              map.removeLayer('train7-lines');
+            }
+            if (response.direction == 'down') { 
+              document.getElementById("cover").style.visibility = "hidden"; // when you scroll down, the cover page will be hided.
+            } else {
+              document.getElementById("cover").style.visibility = "visible"; // when you scroll up, the cover page will be shown.
+            } 
+
+          } else if (index === 7) {
+            if (map.getLayer("full_tribe2-polygons")) {
+              map.removeLayer('full_tribe2-polygons');
+            }
+            if (map.getLayer("spills2-points")) {
+              map.removeLayer('spills2-points');
+            }
+            if (map.getLayer("train8-lines")) {
+              map.removeLayer('train8-lines');
+            }
+            if (response.direction == 'down') { 
+              document.getElementById("cover").style.visibility = "hidden"; // when you scroll down, the cover page will be hided.
+            } else {
+              document.getElementById("cover").style.visibility = "visible"; // when you scroll up, the cover page will be shown.
+            } 
+
+          }
+        
+        }
+
+
+    };
+    // Define a popup variable for tribal and wetland data
+    
+   // Define a popup variable for tribal and wetland data
+
+   let refinePopup = new mapboxgl.Popup({
+      closeButton: true,
+      closeOnClick: true
+    });
+
+   let tribalPopup = new mapboxgl.Popup({
+      closeButton: true,
+      closeOnClick: true
+    });
+
+    let wetlandPopup = new mapboxgl.Popup({
+      closeButton: true,
+      closeOnClick: true
+    });
+
+    let spillsPopup = new mapboxgl.Popup({
+      closeButton: true,
+      closeOnClick: true
+    });
+
+    let spills2Popup = new mapboxgl.Popup({
+      closeButton: true,
+      closeOnClick: true
+    });
+
+    let full_tribePopup = new mapboxgl.Popup({
+      closeButton: true,
+      closeOnClick: true
+    });
+
+    let full_tribe2Popup = new mapboxgl.Popup({
+      closeButton: true,
+      closeOnClick: true
+    });
+
+    let singlePopup = new mapboxgl.Popup({
+      closeButton: true,
+      closeOnClick: true
+    });
+
+    map.on('click', 'refine-points', function(e) {
+      let feature = e.features[0];
+      let popupContent = `<h3>${feature.properties.FacilityNa}</h3>
+                          <p>${feature.properties.OilProduct}</p>`;
+      tribalPopup.setLngLat(e.lngLat).setHTML(popupContent).addTo(map);
+    });
+
+    map.on('mouseenter', 'refine-points', function() {
+      map.getCanvas().style.cursor = 'pointer';
+    });
+
+    map.on('mouseleave', 'refine-points', function() {
+      map.getCanvas().style.cursor = '';
+    });
+
+    // TRIBE INTERSECT
+    map.on('click', 'tribe-polygons', function(e) {
+      let feature = e.features[0];
+      let popupContent = `<h3>${feature.properties.TRIBAL_NM1}</h3>
+                          <p>${feature.properties.ServiceCor}</p>`;
+      tribalPopup.setLngLat(e.lngLat).setHTML(popupContent).addTo(map);
+    });
+
+    map.on('mouseenter', 'tribe-polygons', function() {
+      map.getCanvas().style.cursor = 'pointer';
+    });
+
+    map.on('mouseleave', 'tribe-polygons', function() {
+      map.getCanvas().style.cursor = '';
+    });
+
+    // WETLANDS
+    map.on('click', 'wet-polygons', function(e) {
+      let feature = e.features[0];
+      let popupContent = `<h3>${feature.properties.WLND_TYPE}</h3>
+                          <p>${feature.properties.ServiceCor}</p>`;
+      wetlandPopup.setLngLat(e.lngLat).setHTML(popupContent).addTo(map);
+    });
+
+    map.on('mouseenter', 'wet-polygons', function() {
+      map.getCanvas().style.cursor = 'pointer';
+    });
+
+    map.on('mouseleave', 'wet-polygons', function() {
+      map.getCanvas().style.cursor = '';
+    });
+
+
+    // CRASH SITES
+    map.on('click', 'spills-points', function(e) {
+      let feature = e.features[0];
+      let popupContent = `<h3>${feature.properties.Date}</h3>
+                          <p>${feature.properties.Gallons_Sp} : gallons of oil </p>`;
+      wetlandPopup.setLngLat(e.lngLat).setHTML(popupContent).addTo(map);
+    });
+
+    map.on('mouseenter', 'spills-points', function() {
+      map.getCanvas().style.cursor = 'pointer';
+    });
+
+    map.on('mouseleave', 'spills-points', function() {
+      map.getCanvas().style.cursor = '';
+    });
+
+    // CRASH SITES
+    map.on('click', 'spills2-points', function(e) {
+      let feature = e.features[0];
+      let popupContent = `<h3>${feature.properties.Date}</h3>
+                          <p>${feature.properties.Gallons_Sp} : gallons of oil </p>`;
+      wetlandPopup.setLngLat(e.lngLat).setHTML(popupContent).addTo(map);
+    });
+
+    map.on('mouseenter', 'spills2-points', function() {
+      map.getCanvas().style.cursor = 'pointer';
+    });
+
+    map.on('mouseleave', 'spills2-points', function() {
+      map.getCanvas().style.cursor = '';
+    });
+
+
+    // FUll TRIBAL
+    map.on('click', 'full_tribe-polygons', function(e) {
+      let feature = e.features[0];
+      let popupContent = `<h3>${feature.properties.TRIBAL_NM1}</h3>`;
+
+      tribalPopup.setLngLat(e.lngLat).setHTML(popupContent).addTo(map);
+    });
+
+    map.on('mouseenter', 'full_tribe-polygons', function() {
+      map.getCanvas().style.cursor = 'pointer';
+    });
+
+    map.on('mouseleave', 'full_tribe-polygons', function() {
+      map.getCanvas().style.cursor = '';
+    });
+
+    // FUll TRIBAL
+    map.on('click', 'full_tribe2-polygons', function(e) {
+      let feature = e.features[0];
+      let popupContent = `<h3>${feature.properties.TRIBAL_NM1}</h3>`;
+
+      tribalPopup.setLngLat(e.lngLat).setHTML(popupContent).addTo(map);
+    });
+
+    map.on('mouseenter', 'full_tribe2-polygons', function() {
+      map.getCanvas().style.cursor = 'pointer';
+    });
+
+    map.on('mouseleave', 'full_tribe2-polygons', function() {
+      map.getCanvas().style.cursor = '';
+    });
+
+    // FUll TRIBAL
+    map.on('click', 'single-polygons', function(e) {
+      let feature = e.features[0];
+      let popupContent = `<h3>${feature.properties.TRIBAL_NM1}</h3>`;
+
+      tribalPopup.setLngLat(e.lngLat).setHTML(popupContent).addTo(map);
+    });
+
+    map.on('mouseenter', 'single-polygons', function() {
+      map.getCanvas().style.cursor = 'pointer';
+    });
+
+    map.on('mouseleave', 'single-polygons', function() {
+      map.getCanvas().style.cursor = '';
+    });
+
+
+
+
+
+
+    const nav = new mapboxgl.NavigationControl();
+    map.addControl(nav, 'top-right');
+
+
+
+
+
+    // 5 call the data loading function.
+    geojsonFetch();
+  </script>
+</body>
+
+</html>
+
+  

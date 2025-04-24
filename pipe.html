@@ -1,0 +1,2197 @@
+<!DOCTYPE html>
+<html> 
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="description" content="Wyatt Stanley" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+
+  <title>Wyatt Stanley</title>
+  <!-- <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,400;0,500;1,400;1,500&display=swap" /> -->
+  <!-- <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/v2.8.1/mapbox-gl.css"> -->
+  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css"> -->
+  <link rel="stylesheet" href="map.css">
+  <script src="https://unpkg.com/scrollama"></script>
+  <script src="https://api.mapbox.com/mapbox-gl-js/v2.8.1/mapbox-gl.js"></script>
+</head>
+
+
+<body>
+
+    <div class="topnav" id="myTopnav">
+
+        <!-- Links to other sections -->
+        <a href="index.html">Home</a>
+        <a class="active" href="pipe.html">Pipelines</a>
+        <a href="Train2.html">Trains</a>
+        <a href="water.html">Vessels</a>
+
+
+        <!-- Additional links -->
+
+
+        <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links on smaller screens -->
+        <a href="javascript:void(0);" class="icon">
+            <i class="fa fa-bars"></i>
+        </a>
+    </div>
+
+  <section id="cover">
+
+    <style>
+        .fullscreen-video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    </style>
+    
+    <!-- <video class="fullscreen-video" playsinline="" autoplay="" muted="" loop="">
+      <source src="video/Pipe.mp4" type="video/mp4">
+    </video> -->
+
+    <img src="video/Pipe.png" class="fullscreen-video">
+
+    <div id="intro">
+      <h1>Pipelines</h1>
+      <h5>Washington Crude Oil Spill Risk</h5>
+
+      <div class="footnote">
+        <!-- <span><a href="https://stock.adobe.com">Video Source</a></span> -->
+      </div>
+    </div>
+  </section>
+  <!-- a geonarrative will have two major components, a storyboard and a script panel of a series of scenes/actions -->
+  <section id="geonarrative">
+    <!-- a storymap can present differnt types of objects, like map, chart, diagram, etc. -->
+    <div id="storyboard">
+      <!-- create the place holder element for map -->
+      <div id="map"></div>
+    </div>
+
+    <article class="scene" data-scene="0">
+      <h2>1: Refineries</h2>
+        <p>
+          The black circles displayed on this map are Washington facilities regulated by the Washington State Department of Ecology's 
+          Spills Program. These circles represent fixed shore-side facilities such as refineries and refueling terminals. This includes 
+          facilities that transfer crude oil and petroleum products to or from tank vessels and pipelines. These facilities 
+          refine products such as Gas, Diesel, Crude Oil, Motor Oil, Edible Oils, and more.
+          <br>
+          <br>
+          Oil pipelines transport crude oils and natural gas from several of these refineries to other cities, states, and countries. If a 
+          spill were to occur at one of these sites or during the transportation process 
+          there could be severe effects on the following.
+          <br>
+        </p>
+        <ul>
+            <li>Populated residential areas and vulnerable communities.</li>
+             <br>
+            
+            <li>Waterways that host culturally significant species and habitat.</li>
+             <br>
+             
+            <li>Wetlands and other natural ecosystems.</li> 
+          </p>
+        </ul>
+        <p>
+        Click on the points to display more information.
+        <br>
+        <br>
+        This map includes <a href="https://apps.ecology.wa.gov/coastalatlas/storymaps/spills/spills_sm.html?&Tab=nt1" target="_blank">refinery facilities data</a>.
+        <br>
+        <br>
+        <b>Please refresh the page if map layers are not showing.</b>
+
+        </p>
+
+        
+    </article>
+    <article class="scene" data-scene="1">
+      <h2>2: Western WA Pipelines</h2>
+        <p>
+          <h3>Olympic Pipeline:</h3>
+        </p>
+
+        <ul>
+          <li>"The Olympic Pipeline is a <b>400-mile</b> interstate pipeline system that includes 12-inch, 14-inch, 16-inch, and 20-inch diameter pipelines" 
+            <a href="https://www.bp.com/en_us/united-states/home/products-and-services/pipelines.html" target="_blank">(BP).</a></li>
+           <br>
+          <li>"The pipeline runs along a <b>299-mile</b> corridor from Blaine, Washington to Portland, Oregon" (BP).</li>
+           <br>
+          <li>"The system transports gasoline, diesel, and jet fuel" (BP).</li>
+        </ul>  
+        <p>
+          <h3>Trans Mountain Pipeline:</h3>
+        </p>
+        <ul>
+          <li>"The Trans Mountain Puget Sound Pipeline is a 111-kilometre <b>(69-mile)</b> pipeline system made up of 16- to 20-inch pipe" <a href="https://www.transmountain.com/news/2019/trans-mountains-puget-sound-pipeline-shipping-products-to-washington-state-refineries-since-1954">(TransMountain).</a></li>
+           <br>
+          <li>This system "...has been shipping Canadian crude oil products since 1954 to Washington state.." (TransMountain).</li>
+           <br>
+          <li>This system has "..the capacity for up to about <b>240,000 bpd</b> (28,600 m3 per day) depending on petroleum types..." (TransMountain).</li>
+        </ul>
+        <p>
+          This map displays the Olympic and Trans Mountain pipelines along with the refineries they are connected to. Click on the features to display information.
+        </p>
+
+        <p>
+          This map includes <a href="https://apps.ecology.wa.gov/coastalatlas/storymaps/spills/spills_sm.html?&Tab=nt1" target="_blank">refinery data</a>,  
+          <a href="https://www.bp.com/content/dam/bp/country-sites/en_us/united-states/home/documents/products-and-services/pipelines/olympic-overview.pdf" target="_blank">Olymipic pipeline image</a>, 
+          <a href="https://atlas.eia.gov/datasets/eia::crude-oil-pipelines/explore?location=47.376601%2C-120.396332%2C7.00" target="_blank">Trans Mountain data</a>, and 
+          <a href="https://www.transmountain.com/product-destination" target="_bl
+          ">information</a> on the refineries the Trans Mountain Pipeline connects to.
+        </p>
+    </article>
+    <article class="scene" data-scene="2">
+      <h2>3: Western WA Wetlands</h2>
+        <p>
+          Wetlands are an important environmental asset to Washington State. "Wetlands are among the most productive ecosystems in the 
+          world, comparable to rain forests and coral reefs" <a href="https://www.epa.gov/wetlands/why-are-wetlands-important" target="_blank">(EPA).</a> 
+          <br>
+          <br>
+          This map displays all the wetlands in Washington that are within a half mile radius of these pipelines. If a spill were to occur, these 
+          are the wetlands that are at the highest risk of exposure to an oil spill.
+          <br>
+          <br>
+        </p>
+        <p>
+          <h3>Olympic Pipeline:</h3>
+        </p>
+        <p>
+          The Olympic Pipeline runs south from Bellingham to Vancouver Washington and is within a half mile radius of <b>1,671</b> wetland areas 
+          encompassing <b>21,761</b> square miles of wetland area. 
+        </p>
+        <p>
+          <h3>Trans Mountain Pipeline:</h3>
+        </p>
+        <p>
+          The Trans Mountain Pipeline runs into Bellingham Washington from Canada and is within a half mile radius of <b>502</b> wetland areas encompassing 
+          <b>3,607</b> square miles of wetland area.
+          <br>
+          <br>
+
+          This map includes <a href="https://geo.wa.gov/datasets/02b250843e44485ea7d736b34fa80998_4/explore?location=47.630334%2C-120.819730%2C12.31" target="_blank">wetlands data.</a>
+        </p>
+        
+    </article>
+
+    <article class="scene" data-scene="3">
+      <h2>4: Western WA Low Income Areas</h2>
+        <p>
+          <p>
+            Low-income areas are at a higher risk of living in proximity to petroleum facilities. 
+            Petroleum terminals built in low-income areas contribute to "disproportionate exposure to pollution from  
+            burning fossil fuels and chemicals leaching into the water table" <a href="https://www.climaterealityproject.org/blog/how-pipelines-fuel-climate-injustice#:~:text=According%20to%20the%20Southern%20Environmental,or%20belonging%20to%20racial%20or" target="_blank">(The Climate Reality Project).</a>. 
+          </p>
+          <ul>
+            <li>"Oil refineries are a major source of air pollutants, including toxic metals, particulates, and many types of gasses" <a href="https://scied.ucar.edu/image/oil-refineries-create-air-pollution#:~:text=Factories%20like%20this%20oil%20refinery,%2C%20benzenes%2C%20and%20others)." target="_blank">(Ucar).</a></li>
+             <br>
+            <li>These communities are subjected to spill risk during the transfer between vessel, refinery, and pipeline.</li>
+             <br>
+            <li>These refineries and its pollutants directly affect the health of these communities and their environment.</li>
+          </ul>
+          <p>
+            This map contains Washington <a href="https://www.arcgis.com/apps/View/index.html?appid=359a365f28014151a1ce821dd6f6745c" target="_blank">low 
+              income data</a> represented by the blue areas and black points that represent Washington petroleum refineries that 
+              connect to both the Olympic pipeline and Trans Mountain pipeline.
+            <br>
+            <br>
+            Click the points to display refinery information and the blue areas to display the population percent that is considered low-income.
+            <br>
+  
+             
+          </p>
+        </p>
+    </article>
+    <article class="scene" data-scene="4">
+      <h2>5: Western WA Tribal Lands</h2>
+      <p>
+        In Washington State, there is an inequality in the location of petroleum refineries and their corresponding pipelines. 
+        <br>
+        <br>
+        Black points on this map display refineries, each of which provides oil to the Olympic and Trans Mountain pipeline. The green areas 
+        show tribal lands. The location of these refineries are located beside two of Washington's tribal lands. Spills 
+        in these locations can have detrimental effects on shorelines surrounding these areas. 
+        <br>
+        <br>
+        This map displays tribal land proximity to refineries. Both tribal lands found here, Lummi and Swinomish, have experienced the effects of
+        oil spills.
+        <br>
+        <br>
+        Click the points and areas to display refinery information and the green areas to display the names of these tribal lands.
+        <br>
+        <br>
+        This map includes <a href="https://www.arcgis.com/apps/View/index.html?appid=359a365f28014151a1ce821dd6f6745c" target="_blank">tribal lands data</a>.
+      </p>
+    </article>
+
+    <article class="scene" data-scene="5">
+      <h2>6: Eastern WA Pipeline</h2>
+      <p>
+        <h3>Northwest Pipeline:</h3>
+      </p>
+      <ul>
+        <li>This is a <b>1,377-mile</b> pipeline system <a href="https://www.tcenergy.com/operations/natural-gas/gas-transmission-northwest-xpress-project/" target="_blank">(TC Energy)</a>.</li>
+         <br>
+        <li>This system has transported natural gas since 1962 (TC Energy).</li>
+         <br>
+        <li>This system also transports oil from western Canada into Idaho, Washington, Oregon, and California.</li>
+      </ul>  
+      <p>
+        <h3>Yellowstone & Chevron Pipeline:</h3>
+      </p>
+      <ul>
+        <li>The Chevron Pipeline is part of a <b>3,000</b> mile network that carries <b>1.5</b> million barrels of oil equivalent, chemicals, and refined products
+          every day <a href="https://www.chevron.com/what-we-do/energy/transportation/pipelines" target="_blank">(Chevron).</a>
+        </li>
+         <br>
+        <li>The Chevron has a storage capacity of <b>~2.6</b> million barrels of product (Chevron).</li>
+         <br>
+        <li>The Yellowstone Pipeline is a<b>~709</b> mile long pipeline operated by Phillips 66 <a href="https://www.offshore-technology.com/marketdata/yellowstone-product-pipeline-the-us/?cf-view" target="_blank">(Yellowstone).</a></li>
+         <br>
+        <li>The Yellowstone Pipeline has a maximum diameter of 10 inches that transports fossil fuels from Montana to Washington (Yellowstone).</li>
+      </ul>  
+      <p>
+        This map displays the Northwest Pipeline, the Chevron Pipeline, and the Yellowstone Pipeline along with the refineries they are connected to. Click on the points to display additional information. The Chevron and Yellowstone 
+        pipleine is <a href="https://www.researchgate.net/figure/3-WA-Department-of-Ecology-Marine-and-Pipeline-Routes-in-Puget-Sound-Region-Credit_fig1_268810713" target="_blank">based on</a> this map.
+      </p>
+
+    </article>
+
+    <article class="scene" data-scene="6">
+      <h2>7: Eastern WA Wetlands</h2>
+      <p>
+        Wetlands are an important environmental asset to Washington State. "Wetlands are among the most productive ecosystems in the 
+        world, comparable to rain forests and coral reefs" <a href="https://www.epa.gov/wetlands/why-are-wetlands-important" target="_blank">(EPA)</a>.
+        <br>
+        <br>
+        This map displays all the wetlands in Washington that are within a half mile radius of these pieplines. If a spill were to occur, these 
+        are the wetlands that are at the highest risk of exposure to an oil spill.
+        <br>
+        <br>
+      </p>
+      <p>
+        <h3>Northwest Pipeline:</h3>
+      </p>
+      <p>
+        The Northwest Pipeline, running from Spokane south through Eastern Washington, is within a half mile radius of <b>89</b> wetland areas 
+        encompassing <b>~1,176</b> square miles of wetland area.
+      </p>
+      <p>
+        <h3>Yellowstone & Chevron Pipelines:</h3>
+      </p>
+      <p>
+        Combined, the Yellowstone & Chevron Pipelines in Eastern Washington are within a half mile radius of <b>598</b> wetland areas encompassing 
+        <b>~5,820</b> square miles of wetland area.
+        <br>
+        <br>
+        This map includes <a href="https://geo.wa.gov/datasets/02b250843e44485ea7d736b34fa80998_4/explore?location=47.630334%2C-120.819730%2C12.31" target="_blank">wetlands data.</a>
+      </p>
+
+      
+
+
+    </article>
+
+    <article class="scene" data-scene="7">
+      <h2>8: Eastern WA Low Income Areas</h2>
+      <p>
+        <p>
+          Low-income areas are at a higher risk of living in proximity to petroleum facilities. 
+          Petroleum terminals built in low-income areas contribute to "disproportionate exposure to pollution from  
+          burning fossil fuels and chemicals leaching into the water table" <a href="https://www.climaterealityproject.org/blog/how-pipelines-fuel-climate-injustice#:~:text=According%20to%20the%20Southern%20Environmental,or%20belonging%20to%20racial%20or" target="_blank">(The Climate Reality Project).</a>. 
+        </p>
+        <ul>
+          <li>"Oil refineries are a major source of air pollutants, including toxic metals, particulates, and many types of gasses" <a href="https://scied.ucar.edu/image/oil-refineries-create-air-pollution#:~:text=Factories%20like%20this%20oil%20refinery,%2C%20benzenes%2C%20and%20others)." target="_blank">(Ucar).</a></li>
+           <br>
+          <li>These communities are subjected to spill risk during the transfer between vessel, refinery, and pipelines.</li>
+           <br>
+          <li>These refineries and their pollutants directly affect the health of these communities and their environment.</li>
+        </ul>
+        <p>
+          This map contains Washington <a href="https://www.arcgis.com/apps/View/index.html?appid=359a365f28014151a1ce821dd6f6745c" target="_blank">low 
+            income data</a> represented by the blue areas and black points that represent Washington <a href="https://apps.ecology.wa.gov/coastalatlas/storymaps/spills/spills_sm.html?&Tab=nt1" target="_blank">refineries</a> that 
+            connect to both the Chevron and Yellowstone pipelines.
+          <br>
+          <br>
+          Click the black points to display refinery information and the blue areas to display the population percent that is considered low-income.
+          <br>
+        </p>
+      </p>
+
+      
+
+
+    </article>
+
+
+    <article class="scene" data-scene="8">
+      <h2>9: Northwest Pipeline Expansion</h2>
+      
+        <p>
+          On October 19th, 2023, the Federal Energy Regulatory Commission (FERC) allowed the proposed gas transmission Northwest Pipeline 
+          to move forward with its expansion. This expansion will “…upgrade three existing compressor stations on the Gas Transmission 
+          Northwest (GTN) system..." <a href="https://www.tcenergy.com/operations/natural-gas/gas-transmission-northwest-xpress-project/">(TC Energy)</a>. This project will allow for the pipeline to 
+          transport <b>150,000</b> dekatherms of natural gas a day, enough gas to power <b>750,000</b> homes. This pipeline will continue 
+          at this rate for <b>50</b> years after its completion <a href="https://governor.wa.gov/news/2023/inslee-statement-condemning-ferc-approval-expanded-fracked-gas-pipeline">(Washington Governor Jay Inslee)</a>.
+        </p>
+        <ul>
+          <li>Gov. Jay Inslee stated that <b>hundreds of millions</b> of dollars have been invested to achieve <b>100%</b> clean electricity by 2045 <a href="https://governor.wa.gov/sites/default/files/2023-10/Inslee%20FERC%20letter%20re%20GTN%20Xpress%20pipeline.pdf">(Inslee, Jay)</a>.</li>
+            <br>
+          <li>If implemented, the GTN pipeline “...would represent <b>48</b> percent of the region’s target greenhouse gas emissions from all sources" (Inslee, Jay).</li>
+            <br>
+          <li>If expanded, the GTN pipeline would continue to operate after Washington transitions to net zero emissions.</li>
+            <br>
+          <li>Due to the decline of gas sales in Washington State, GTN may not be able to recover their invested costs. “Those costs 
+            will increasingly burden the remaining customers and GTN may be unable to recover the costs, resulting in a stranded asset” 
+            (Inslee, Jay).</li>
+        </ul>
+        
+        <p>
+          This map displays all the pump stations for this pipeline along with the three proposed pump stations. The current pump 
+          stations are displayed as black points while the proposed updated pump stations are represented in blue.
+          <br>
+          <br>
+          <a href="https://www.tcenergy.com/siteassets/pdfs/natural-gas/gas-transmission-northwest/tc-gas-transmission-northwest-map.pdf" target="_blank">NW Pipeline Based On</a>
+          <a href="https://tcenergy.com/siteassets/pdfs/natural-gas/gtnxp/tce-gas-transmission-northwest-xpress-map.pdf" target="_blank">Compressors Based On</a>
+          
+        </p>
+
+      
+
+
+    </article>
+
+    <article class="scene" data-scene="9">
+      <h2>10: Northwest Pipeline Rupture Risk</h2>
+      <p>
+
+      </p>
+
+
+      <p>
+        Not only does this pipeline expansion go against the climate goals and laws of Washington, Oregon, and California, but it introduces 
+        unneeded risk to Washington's communities and environments. 
+        
+      </p>
+
+      <ul>
+        <li>On April 16th, 2024, a section of TC Energy's NGTL gas pipeline in Alberta burst and 
+          caught on fire. TC Energy is the company expanding the Northwest pipeline. This rupture sparked a forest fire in the remote area <a href="https://www.reuters.com/world/americas/tc-energy-gas-pipeline-triggers-wildfire-alberta-media-report-2024-04-16/" target="_blank">(Reuters).</a> </li>
+        <br>
+        <li>Similar ruptures in Washington would "...not only harm the environment but also present a heightened wildfire risk in the arid regions it passes 
+          through".</li>
+        <br>
+        <li>“An explosion of that level in eastern Washington or eastern Oregon would be catastrophic” <a href="https://apnews.com/article/natural-gas-pipeline-pacific-northwest-5e9c79c412b407ddc9bcb21c1ff8ee26" target="_blank">(APN News).</a></li>
+
+        <br>
+        <br>
+        This map displays the NorthWest pipeline along with major fire data from 1973 to 2022.
+        <br>
+        <br>
+        This map contains Washington <a href="https://geo.wa.gov/datasets/6f31b076628d4f8ca5a964cbefd2cccc/explore">fire data</a>.
+      </ul>
+
+    </article>
+
+    <article class="scene" data-scene="10">
+      <h2>11: Olympic Spill</h2>
+      <p>
+        On December 12th, 2023, the Olympic pipeline ruptured near Washington's Skagit River <a href="https://apnews.com/article/olympic-pipeline-spill-epa-washington-cab83ab6340386367bd6b3139c699816" target="_blank">(AP News).</a>
+        <br>
+        <br>
+        "About <b>25,660</b> gallons (97,100 liters) of gasoline spilled after a small tube leading from the main Olympic Pipeline to a 
+        pressure-check valve failed on Sunday..." (AP News).
+        <br>
+        <br>
+        "The EPA said responders placed an absorbent boom downstream of the spill in Hill Ditch and Bulson Creek, which support salmon 
+        and other wildlife and which flow into the Skagit River" (AP News). 
+        <br>
+        <br>
+        This map displays the location of the Olympic Pipeline burst on December 12th, 2023.
+      </p>
+
+      
+
+
+    </article>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+
+  </section>
+
+  <section id="footer">
+    <h2>Wyatt Stanley</h2>
+  </section>
+  
+  <script>
+    // 1. Declare the maps, script panels, and different thematic layers.
+    let map, scriptPanel = scrollama(), refineLayer, rolympicLayer, olympic2Layer, ysLayer, ys2Layer, tmLayer, tm2Layer, nwLayer, nw2Layer, owetLayer, yswetLayer, tmwetLayer, nwwetLayer, orfLayer, orf2Layer, ysrfLayer, tmrf2Layer, nwrfLayer, income, o_tribeLayer, pumpLayer, spillLayer, fireLayer;
+
+    // 2. Intialize the layout.
+   
+    history.scrollRestoration = "manual"; // make sure the geo-narrative will be scrolled to the cover page even after a page refresh.
+    window.scrollTo(0, 0); // scroll the geo-narrative to the coverpage
+    adjustStoryboardlSize(); // force a browser window resize.
+    window.addEventListener("resize", adjustStoryboardlSize); // // ask the browser window listen to the resize event, thereby force a viewport resize whenever adjusting the window size.
+
+    // 3. Define Generic window resize listener event
+    function adjustStoryboardlSize() {
+
+      const scenes = document.getElementsByClassName("scene");
+      const storyboard = document.getElementById("storyboard");
+
+      // 3.1 determine the height of each scene element
+      let sceneH = Math.floor(window.innerHeight * 0.75);
+      for (const scene of scenes) {
+        scene.style.height = sceneH + "px";
+      }
+      
+      // 3.2 determin the height of the storyboard.
+      let storyboardHeight = window.innerHeight;
+      let storyboardMarginTop = (window.innerHeight - storyboardHeight) / 2;
+
+      storyboard.style.height = storyboardHeight + "px";
+      storyboard.style.top = storyboardMarginTop + "px"
+
+      // 3.3 tell scrollama/script panel to update new element dimensions
+      scriptPanel.resize();
+    }
+
+    // 4. Initialize the mapbox
+    mapboxgl.accessToken =
+      'pk.eyJ1IjoiamFrb2J6aGFvIiwiYSI6ImNpcms2YWsyMzAwMmtmbG5icTFxZ3ZkdncifQ.P9MBej1xacybKcDN_jehvw'; // Assign the access token
+   
+    map = new mapboxgl.Map({
+      container: 'map', // container ID
+      style: 'mapbox://styles/mapbox/light-v10',
+      zoom: 7, // starting zoom
+      minZoom: 3,
+      maxZoom: 10,
+      center: [-121.93, 47.33], // starting center
+      scrollZoom: false,
+      boxZoom: false,
+      doubleClickZoom: false
+    });  // Declare the map object
+
+    // An alternative way to disable map zoom when using scroll
+    // map.scrollZoom.disable();
+
+
+    // 5. define the asynchronous function to load geojson data and then performs the dependent actions.
+    async function geojsonFetch() {
+
+
+      // 6 wait till the data of washington counties and celltowers are fully loaded.
+      let response, refine, olympic, olympic2, ys, ys2, tm, tm2, nw, nw2, owet, yswet, tmwet, nwwet, orf, orf2, ysrf, tmrf, tmrf2, nwrf, income, o_tribe, pump, spill, fire;
+      
+      // ALL REFINARIES
+      response = await fetch("assets/Water/refinaries.geojson");
+      refine = await response.json();
+
+      // PIPELINES
+
+      response = await fetch("assets/Pipe/Olympic.geojson");
+      olympic = await response.json();
+      response = await fetch("assets/Pipe/Olympic.geojson");
+      olympic2 = await response.json();
+      response = await fetch("assets/Pipe/YS_pipeline.geojson");
+      ys = await response.json();
+      response = await fetch("assets/Pipe/YS_pipeline.geojson");
+      ys2 = await response.json();
+      response = await fetch("assets/Pipe/TM_pipeline.geojson");
+      tm = await response.json();
+      response = await fetch("assets/Pipe/TM_pipeline.geojson");
+      tm2 = await response.json();
+      response = await fetch("assets/Pipe/NW_Pipeline.geojson");
+      nw = await response.json();
+      response = await fetch("assets/Pipe/NW_Pipeline.geojson");
+      nw2 = await response.json();
+
+      // // WETLANDS
+      response = await fetch("assets/Pipe/oly_wet.geojson");
+      owet = await response.json();
+      response = await fetch("assets/Pipe/ys_wet.geojson");
+      yswet = await response.json();
+      response = await fetch("assets/Pipe/tm_wet.geojson");
+      tmwet = await response.json();
+      response = await fetch("assets/Pipe/nw_wet.geojson");
+      nwwet = await response.json();
+
+      // // REFINARIES BY PIPELINE
+      response = await fetch("assets/Pipe/refoil.geojson");
+      orf = await response.json();
+      response = await fetch("assets/Pipe/refoil.geojson");
+      orf2 = await response.json();
+      response = await fetch("assets/Pipe/ys_refine.geojson");
+      ysrf = await response.json();
+      response = await fetch("assets/Pipe/refoil.geojson");
+      tmrf = await response.json();
+      response = await fetch("assets/Pipe/refoil.geojson");
+      tmrf2 = await response.json();
+      response = await fetch("assets/Pipe/nw_com.geojson");
+      nwrf = await response.json();
+
+      //LOW INCOME
+      response = await fetch("assets/Water/lowincome.geojson");
+      income = await response.json();
+      response = await fetch("assets/Pipe/o_tribe.geojson");
+      o_tribe = await response.json();
+      response = await fetch("assets/Pipe/update.geojson");
+      pump = await response.json();
+      response = await fetch("assets/Pipe/o_spill.geojson");
+      spill = await response.json();
+      response = await fetch("assets/Pipe/fire.json");
+      fire = await response.json();
+
+      
+
+
+
+
+
+      // 7. Trigger operations inside of the the ()=> {} funciton while loading the map.
+
+
+        // 8. add map source and declare layers.
+
+        // ALL REFINARIES
+
+        map.addSource('refine-src', {
+          type: 'geojson',
+          data: refine
+        });
+
+        // PIPELINES
+
+        map.addSource('olympic-src', {
+          type: 'geojson',
+          data: olympic
+        });
+
+        map.addSource('olympic2-src', {
+          type: 'geojson',
+          data: olympic2
+        });
+
+        map.addSource('ys-src', {
+          type: 'geojson',
+          data: ys
+        });
+
+        map.addSource('ys2-src', {
+          type: 'geojson',
+          data: ys2
+        });
+
+        map.addSource('tm-src', {
+          type: 'geojson',
+          data: tm
+        });
+
+        map.addSource('tm2-src', {
+          type: 'geojson',
+          data: tm2
+        });
+
+        map.addSource('nw-src', {
+          type: 'geojson',
+          data: nw
+        });
+
+        map.addSource('nw2-src', {
+          type: 'geojson',
+          data: nw2
+        });
+
+        // WETLANDS
+
+        map.addSource('owet-src', {
+          type: 'geojson',
+          data: olympic
+        });
+
+        map.addSource('yswet-src', {
+          type: 'geojson',
+          data: yswet
+        });
+
+        map.addSource('tmwet-src', {
+          type: 'geojson',
+          data: tmwet
+        });
+
+        map.addSource('nwwet-src', {
+          type: 'geojson',
+          data: nwwet
+        });
+
+        // REFINARIES BY PIPELINE
+
+        map.addSource('orf-src', {
+          type: 'geojson',
+          data: orf
+        });
+
+        map.addSource('orf2-src', {
+          type: 'geojson',
+          data: orf2
+        });
+
+        map.addSource('ysrf-src', {
+          type: 'geojson',
+          data: ysrf
+        });
+
+        map.addSource('tmrf-src', {
+          type: 'geojson',
+          data: tmrf
+        });
+
+        map.addSource('tmrf2-src', {
+          type: 'geojson',
+          data: tmrf2
+        });
+
+        map.addSource('nwrf-src', {
+          type: 'geojson',
+          data: nwrf
+        });
+
+        //LOW INCOME
+        map.addSource('income-src', {
+          type: 'geojson',
+          data: income
+        });
+
+        map.addSource('o_tribe-src', {
+          type: 'geojson',
+          data: o_tribe
+        });
+
+        map.addSource('pump-src', {
+          type: 'geojson',
+          data: pump
+        });
+
+        map.addSource('spill-src', {
+          type: 'geojson',
+          data: spill
+        });
+
+        map.addSource('fire-src', {
+          type: 'geojson',
+          data: fire
+        });
+
+
+
+
+
+
+
+
+        //declare layers
+
+        //ALL REFINARIES
+
+        refineLayer = {
+          'id': 'refine-points',
+          'type': 'circle',
+          'source': 'refine-src',
+          'minzoom': 1,
+          'paint': {
+            'circle-color': '#424242',
+            'circle-radius': 5,
+            'circle-opacity': 0.4,
+          }
+        };
+
+        // PIPELINES
+        olympicLayer = {
+          'id': 'olympic-lines',
+          'type': 'line',
+          'source': 'olympic-src',
+          'minzoom': 5,
+          'paint': {
+            'line-color': '#000000',
+            'line-width': 1.5
+            
+          }
+        };
+
+        olympic2Layer = {
+          'id': 'olympic2-lines',
+          'type': 'line',
+          'source': 'olympic2-src',
+          'minzoom': 5,
+          'paint': {
+            'line-color': '#000000',
+            'line-width': 1.5
+            
+          }
+        };
+
+        ysLayer = {
+          'id': 'ys-lines',
+          'type': 'line',
+          'source': 'ys-src',
+          'minzoom': 5,
+          'paint': {
+            'line-color': '#000000',
+            'line-width': 1.5
+            
+          }
+        };
+
+        ys2Layer = {
+          'id': 'ys2-lines',
+          'type': 'line',
+          'source': 'ys2-src',
+          'minzoom': 5,
+          'paint': {
+            'line-color': '#000000',
+            'line-width': 1.5
+            
+          }
+        };
+
+        tmLayer = {
+          'id': 'tm-lines',
+          'type': 'line',
+          'source': 'tm-src',
+          'minzoom': 5,
+          'paint': {
+            'line-color': '#000000',
+            'line-width': 1.5
+          
+          }
+        };
+
+        tm2Layer = {
+          'id': 'tm2-lines',
+          'type': 'line',
+          'source': 'tm2-src',
+          'minzoom': 5,
+          'paint': {
+            'line-color': '#000000',
+            'line-width': 1.5
+          
+          }
+        };
+
+        nwLayer = {
+          'id': 'nw-lines',
+          'type': 'line',
+          'source': 'nw-src',
+          'minzoom': 5,
+          'paint': {
+            'line-color': '#000000',
+            'line-width': 1.5
+            
+          }
+        };
+
+        nw2Layer = {
+          'id': 'nw2-lines',
+          'type': 'line',
+          'source': 'nw2-src',
+          'minzoom': 5,
+          'paint': {
+            'line-color': '#000000',
+            'line-width': 1.5
+            
+          }
+        };
+
+        // WETLANDS
+        owetLayer = {
+          'id': 'owet-polygons',
+          'type': 'fill',
+          'source': 'owet-src',
+          'minzoom': 5,
+          'paint': {
+            'fill-color': '#1E7E14',
+            'fill-opacity': 1
+
+          }
+        };
+
+        yswetLayer = {
+          'id': 'yswet-polygons',
+          'type': 'fill',
+          'source': 'yswet-src',
+          'minzoom': 5,
+          'paint': {
+            'fill-color': '#1E7E14',
+            'fill-opacity': 1
+
+          }
+        };
+
+        tmwetLayer = {
+          'id': 'tmwet-polygons',
+          'type': 'fill',
+          'source': 'tmwet-src',
+          'minzoom': 5,
+          'paint': {
+            'fill-color': '#1E7E14',
+            'fill-opacity': 1
+
+          }
+        };
+
+        nwwetLayer = {
+          'id': 'nwwet-polygons',
+          'type': 'fill',
+          'source': 'nwwet-src',
+          'minzoom': 5,
+          'paint': {
+            'fill-color': '#1E7E14',
+            'fill-opacity': 1
+
+          }
+        };
+
+        // REFINAREIS BY PIPELINE
+        orfLayer = {
+          'id': 'orf-points',
+          'type': 'circle',
+          'source': 'orf-src',
+          'minzoom': 5,
+          'paint': {
+            'circle-color': '#424242',
+            'circle-radius': 5,
+            'circle-opacity': 1,
+          }
+        };
+
+        orf2Layer = {
+          'id': 'orf2-points',
+          'type': 'circle',
+          'source': 'orf2-src',
+          'minzoom': 5,
+          'paint': {
+            'circle-color': '#424242',
+            'circle-radius': 5,
+            'circle-opacity': 1,
+          }
+        };
+
+        ysrfLayer = {
+          'id': 'ysrf-points',
+          'type': 'circle',
+          'source': 'ysrf-src',
+          'minzoom': 5,
+          'paint': {
+            'circle-color': '#424242',
+            'circle-radius': 5,
+            'circle-opacity': 1,
+          }
+        };
+
+        tmrfLayer = {
+          'id': 'tmrf-points',
+          'type': 'circle',
+          'source': 'tmrf-src',
+          'minzoom': 5,
+          'paint': {
+            'circle-color': '#424242',
+            'circle-radius': 5,
+            'circle-opacity': 1,
+          }
+        };
+
+        tmrf2Layer = {
+          'id': 'tmrf2-points',
+          'type': 'circle',
+          'source': 'tmrf2-src',
+          'minzoom': 5,
+          'paint': {
+            'circle-color': '#424242',
+            'circle-radius': 5,
+            'circle-opacity': 1,
+          }
+        };
+
+        nwrfLayer = {
+          'id': 'nwrf-points',
+          'type': 'circle',
+          'source': 'nwrf-src',
+          'minzoom': 5,
+          'paint': {
+            'circle-color': '#424242',
+            'circle-radius': 5,
+            'circle-opacity': 1,
+          }
+        };
+
+        //LOW INCOME 
+
+        incomeLayer = {
+          'id': 'income-polygons',
+          'type': 'fill',
+          'source': 'income-src',
+          'minzoom': 5,
+          'paint': {
+            'fill-color': '#0000ff',
+            'fill-opacity': 0.2
+
+          }
+        };
+
+        o_tribeLayer = {
+          'id': 'o_tribe-polygons',
+          'type': 'fill',
+          'source': 'o_tribe-src',
+          'minzoom': 5,
+          'paint': {
+            'fill-color': '#00cc00',
+            'fill-opacity': 0.2
+
+          }
+        };
+
+        pumpLayer = {
+          'id': 'pump-points',
+          'type': 'circle',
+          'source': 'pump-src',
+          'minzoom': 5,
+          'paint': {
+            'circle-color': '#002EFF',
+            'circle-radius': 7,
+            'circle-opacity': 1,
+          }
+        };
+
+        spillLayer = {
+          'id': 'spill-points',
+          'type': 'circle',
+          'source': 'spill-src',
+          'minzoom': 5,
+          'paint': {
+            'circle-color': '#cc0000',
+            'circle-radius': 6,
+            'circle-opacity': 1,
+          }
+        };
+
+        fireLayer = {
+          'id': 'fire-polygons',
+          'type': 'fill',
+          'source': 'fire-src',
+          'minzoom': 5,
+          'paint': {
+            'fill-color': '#E95712',
+            'fill-opacity': 0.2
+
+          }
+        };
+
+
+
+        // 9. Initialize the script panel
+        scriptPanel
+          .setup({
+            step: ".scene", // all the scenes.
+            offset: 0.33, // the location of the enter and exit trigger
+            debug: false // toggler on or off the debug mode.
+          })
+          .onStepEnter(handleSceneEnter)
+          .onStepExit(handleSceneExit);
+        
+        // 10. This function performs when a scene enters the storyboard
+        function handleSceneEnter(response) {
+
+          var index = response.index; // capture the id of the current scene. 
+
+          // Refinaries
+          
+          if (index === 0) { // When enter the first scene
+
+            map.flyTo({
+              center: [-124.6, 47.6131229],
+              zoom: 6.2,
+              pitch: 0,
+              speed: 0.5
+            }); // fly to a new location
+            
+            if (typeof (map.getSource('refine-src')) == 'undefined') { //if the map source 'counties-src' does not exist
+              map.addSource('refine-src', {
+                type: 'geojson',
+                data: refine
+              }); // reload the map source of 'counties-src'
+            } else {
+              map.getSource('refine-src').setData(refine); // if the map source does not exist, relaod the data counties to the pre-defined map source 'counties-src'.
+
+            }
+
+            if (!map.getLayer("refine-points")) { // if the map layer 'counties-polygons' does not exit
+              map.addLayer(refineLayer);
+            }
+            document.getElementById("cover").style.visibility = "hidden"; // Hide the cover page
+        
+
+            // Ports
+          } else if (index === 1) { // When enter the second scene.
+            map.flyTo({
+              center: [-124.6, 47.6131229],
+              zoom: 6.2,
+              pitch: 0,
+              speed: 0.5
+            });
+
+            if (typeof (map.getSource('olympic-src')) == 'undefined') {
+              map.addSource('olympic-src', {
+                type: 'geojson',
+                data: olympic
+              });
+            } else {
+              map.getSource('olympic-src').setData(olympic);
+
+            }
+
+            if (!map.getLayer("olympic-lines")) {
+              map.addLayer(olympicLayer);
+            }
+
+            if (typeof (map.getSource('tm-src')) == 'undefined') {
+              map.addSource('tm-src', {
+                type: 'geojson',
+                data: tm
+              });
+            } else {
+              map.getSource('tm-src').setData(tm);
+
+            }
+
+            if (!map.getLayer("tm-lines")) {
+              map.addLayer(tmLayer);
+            }
+
+            if (typeof (map.getSource('orf-src')) == 'undefined') {
+              map.addSource('orf-src', {
+                type: 'geojson',
+                data: orf
+              });
+            } else {
+              map.getSource('orf-src').setData(orf);
+
+            }
+
+            if (!map.getLayer("orf-points")) {
+              map.addLayer(orfLayer);
+            }
+
+            
+          } else if (index === 2) {
+            //Relocate to Seattle
+            map.flyTo({
+              center: [-122.8, 48.2],
+              zoom: 9,
+              pitch: 50,
+              speed: 0.5
+            });
+
+            if (typeof (map.getSource('olympic2-src')) == 'undefined') {
+              map.addSource('olympic2-src', {
+                type: 'geojson',
+                data: olympic2
+              });
+            } else {
+              map.getSource('olympic2-src').setData(olympic2);
+
+            }
+
+            if (!map.getLayer("olympic2-lines")) {
+              map.addLayer(olympic2Layer);
+            }
+
+            if (typeof (map.getSource('tm2-src')) == 'undefined') {
+              map.addSource('tm2-src', {
+                type: 'geojson',
+                data: tm
+              });
+            } else {
+              map.getSource('tm2-src').setData(tm2);
+
+            }
+
+            if (!map.getLayer("tm2-lines")) {
+              map.addLayer(tm2Layer);
+            }
+
+            if (typeof (map.getSource('owet-src')) == 'undefined') {
+              map.addSource('owet-src', {
+                type: 'geojson',
+                data: owet
+              });
+            } else {
+              map.getSource('owet-src').setData(owet);
+
+            }
+
+            if (!map.getLayer("owet-polygons")) {
+              map.addLayer(owetLayer);
+            }
+
+            if (typeof (map.getSource('tmwet-src')) == 'undefined') {
+              map.addSource('tmwet-src', {
+                type: 'geojson',
+                data: tmwet
+              });
+            } else {
+              map.getSource('tmwet-src').setData(tmwet);
+
+            }
+
+            if (!map.getLayer("tmwet-polygons")) {
+              map.addLayer(tmwetLayer);
+            }
+
+
+          } else if (index === 3) { // When enter the second scene.
+            map.flyTo({
+              center: [-123, 48.7],
+              zoom: 9,
+              pitch: 0,
+              speed: 0.5
+            });
+
+            if (typeof (map.getSource('income-src')) == 'undefined') {
+              map.addSource('income-src', {
+                type: 'geojson',
+                data: income
+              });
+            } else {
+              map.getSource('income-src').setData(income);
+
+            }
+
+            if (!map.getLayer("income-polygons")) {
+              map.addLayer(incomeLayer);
+            }
+
+            if (typeof (map.getSource('orf-src')) == 'undefined') {
+              map.addSource('orf-src', {
+                type: 'geojson',
+                data: orf
+              });
+            } else {
+              map.getSource('orf-src').setData(orf);
+
+            }
+
+            if (!map.getLayer("orf-points")) {
+              map.addLayer(orfLayer);
+            }
+
+            
+          } else if (index === 4) { // When enter the second scene.
+            map.flyTo({
+              center: [-123, 48.7],
+              zoom: 9,
+              pitch: 0,
+              speed: 0.5
+            });
+
+            if (typeof (map.getSource('o_tribe-src')) == 'undefined') {
+              map.addSource('o_tribe-src', {
+                type: 'geojson',
+                data: o_tribe
+              });
+            } else {
+              map.getSource('o_tribe-src').setData(o_tribe);
+
+            }
+
+            if (!map.getLayer("o_tribe-polygons")) {
+              map.addLayer(o_tribeLayer);
+            }
+
+            if (typeof (map.getSource('orf2-src')) == 'undefined') {
+              map.addSource('orf2-src', {
+                type: 'geojson',
+                data: orf
+              });
+            } else {
+              map.getSource('orf2-src').setData(orf);
+
+            }
+
+            if (!map.getLayer("orf2-points")) {
+              map.addLayer(orf2Layer);
+            }
+
+            
+          } else if (index === 5) { // When enter the second scene.
+            map.flyTo({
+              center: [-119.7, 47],
+              zoom: 7,
+              pitch: 0,
+              speed: 0.5
+            });
+
+            if (typeof (map.getSource('ys-src')) == 'undefined') {
+              map.addSource('ys-src', {
+                type: 'geojson',
+                data: ys
+              });
+            } else {
+              map.getSource('ys-src').setData(ys);
+
+            }
+
+            if (!map.getLayer("ys-lines")) {
+              map.addLayer(ysLayer);
+            }
+
+            if (typeof (map.getSource('nw-src')) == 'undefined') {
+              map.addSource('nw-src', {
+                type: 'geojson',
+                data: nw
+              });
+            } else {
+              map.getSource('nw-src').setData(nw);
+
+            }
+
+            if (!map.getLayer("nw-lines")) {
+              map.addLayer(nwLayer);
+            }
+
+            if (typeof (map.getSource('orf-src')) == 'undefined') {
+              map.addSource('ysrf-src', {
+                type: 'geojson',
+                data: ysrf
+              });
+            } else {
+              map.getSource('ysrf-src').setData(ysrf);
+
+            }
+
+            if (!map.getLayer("ysrf-points")) {
+              map.addLayer(ysrfLayer);
+            }
+
+            
+          } else if (index === 6) {
+            //Relocate to Seattle
+            map.flyTo({
+              center: [-118, 47.2],
+              zoom: 10,
+              pitch: 57,
+              speed: 0.5
+            });
+
+            if (typeof (map.getSource('ys2-src')) == 'undefined') {
+              map.addSource('ys2-src', {
+                type: 'geojson',
+                data: ys2
+              });
+            } else {
+              map.getSource('ys2-src').setData(ys2);
+
+            }
+
+            if (!map.getLayer("ys2-lines")) {
+              map.addLayer(ys2Layer);
+            }
+
+            if (typeof (map.getSource('nw2-src')) == 'undefined') {
+              map.addSource('nw2-src', {
+                type: 'geojson',
+                data: nw2
+              });
+            } else {
+              map.getSource('nw2-src').setData(nw2);
+
+            }
+
+            if (!map.getLayer("nw2-lines")) {
+              map.addLayer(nw2Layer);
+            }
+
+            if (typeof (map.getSource('yswet-src')) == 'undefined') {
+              map.addSource('yswet-src', {
+                type: 'geojson',
+                data: yswet
+              });
+            } else {
+              map.getSource('yswet-src').setData(yswet);
+
+            }
+
+            if (!map.getLayer("yswet-polygons")) {
+              map.addLayer(yswetLayer);
+            }
+
+            if (typeof (map.getSource('nwwet-src')) == 'undefined') {
+              map.addSource('nwet-src', {
+                type: 'geojson',
+                data: nwwet
+              });
+            } else {
+              map.getSource('nwwet-src').setData(nwwet);
+
+            }
+
+            if (!map.getLayer("nwwet-polygons")) {
+              map.addLayer(nwwetLayer);
+            }
+
+
+          } else if (index === 7) {
+            //Relocate to Seattle
+            map.flyTo({
+              center: [-119.7, 47],
+              zoom: 7,
+              pitch: 0,
+              speed: 0.5
+            });
+
+            if (typeof (map.getSource('income-src')) == 'undefined') {
+              map.addSource('income-src', {
+                type: 'geojson',
+                data: income
+              });
+            } else {
+              map.getSource('income-src').setData(income);
+
+            }
+
+            if (!map.getLayer("income-polygons")) {
+              map.addLayer(incomeLayer);
+            }
+
+            if (typeof (map.getSource('ysrf-src')) == 'undefined') {
+              map.addSource('ysrf-src', {
+                type: 'geojson',
+                data: ysrf
+              });
+            } else {
+              map.getSource('ysrf-src').setData(ysrf);
+
+            }
+
+            if (!map.getLayer("ysrf-points")) {
+              map.addLayer(ysrfLayer);
+            }
+
+
+          } else if (index === 8) { // When enter the second scene.
+            map.flyTo({
+              center: [-122, 47],
+              zoom: 6.2,
+              pitch: 0,
+              speed: 0.5
+            });
+
+            if (typeof (map.getSource('nw-src')) == 'undefined') {
+              map.addSource('nw-src', {
+                type: 'geojson',
+                data: nw
+              });
+            } else {
+              map.getSource('nw-src').setData(nw);
+
+            }
+
+            if (!map.getLayer("nw-lines")) {
+              map.addLayer(nwLayer);
+            }
+
+            if (typeof (map.getSource('nwrf-src')) == 'undefined') {
+              map.addSource('nwrf-src', {
+                type: 'geojson',
+                data: nwrf
+              });
+            } else {
+              map.getSource('nwrf-src').setData(nwrf);
+
+            }
+
+            if (!map.getLayer("nwrf-points")) {
+              map.addLayer(nwrfLayer);
+            }
+
+            if (typeof (map.getSource('pump-src')) == 'undefined') {
+              map.addSource('pump-src', {
+                type: 'geojson',
+                data: pump
+              });
+            } else {
+              map.getSource('pump-src').setData(pump);
+
+            }
+
+            if (!map.getLayer("pump-points")) {
+              map.addLayer(pumpLayer);
+            }
+
+
+
+            
+          } else if (index === 9) { // When enter the second scene.
+            map.flyTo({
+              center: [-122, 47],
+              zoom: 6.2,
+              pitch: 0,
+              speed: 0.5
+            });
+
+            if (typeof (map.getSource('nw2-src')) == 'undefined') {
+              map.addSource('nw2-src', {
+                type: 'geojson',
+                data: nw2
+              });
+            } else {
+              map.getSource('nw2-src').setData(nw2);
+
+            }
+
+            if (!map.getLayer("nw2-lines")) {
+              map.addLayer(nw2Layer);
+            }
+
+            if (typeof (map.getSource('fire-src')) == 'undefined') {
+              map.addSource('fire-src', {
+                type: 'geojson',
+                data: fire
+              });
+            } else {
+              map.getSource('fire-src').setData(fire);
+
+            }
+
+            if (!map.getLayer("fire-polygons")) {
+              map.addLayer(fireLayer);
+            }
+
+            
+          } else if (index == 10) {
+
+            map.flyTo({
+              center: [-123, 48.44],
+              zoom: 8,
+              pitch: 0,
+              speed: 0.5
+            });
+          
+            if (typeof (map.getSource('olympic2-src')) == 'undefined') {
+              map.addSource('olympic2-src', {
+                type: 'geojson',
+                data: olympic2
+              });
+            } else {
+              map.getSource('olympic2-src').setData(olympic2);
+
+            }
+
+            if (!map.getLayer("olympic2-lines")) {
+              map.addLayer(olympic2Layer);
+            }
+
+            if (typeof (map.getSource('spill-src')) == 'undefined') {
+              map.addSource('spill-src', {
+                type: 'geojson',
+                data: spill
+              });
+            } else {
+              map.getSource('spill-src').setData(spill);
+
+            }
+
+            if (!map.getLayer("spill-lines")) {
+              map.addLayer(spillLayer);
+            }
+
+          
+          } else if (index === 14) {
+
+            map.flyTo({
+              center: [-122.4121036, 47.6131229],
+              zoom: 7,
+              pitch: 0,
+              speed: 0.5
+
+            });
+
+
+          }
+
+
+
+        }
+
+        
+
+        // 11. This function performs when a scene exists the storyboard
+        function handleSceneExit(response) {
+          var index = response.index;
+
+          if (index === 0) {
+            if (map.getLayer("refine-points")) {
+              map.removeLayer('refine-points');
+            }
+            if (response.direction == 'down') { 
+              document.getElementById("cover").style.visibility = "hidden"; // when you scroll down, the cover page will be hided.
+            } else {
+              document.getElementById("cover").style.visibility = "visible"; // when you scroll up, the cover page will be shown.
+            } 
+
+          } else if (index === 1) {
+            if (map.getLayer("olympic-lines")) {
+              map.removeLayer('olympic-lines');
+            }
+            if (map.getLayer("tm-lines")) {
+              map.removeLayer('tm-lines');
+            }
+            if (map.getLayer("orf-points")) {
+              map.removeLayer('orf-points');
+            }
+
+            if (response.direction == 'down') { 
+              document.getElementById("cover").style.visibility = "hidden"; // when you scroll down, the cover page will be hided.
+            } else {
+              document.getElementById("cover").style.visibility = "visible"; // when you scroll up, the cover page will be shown.
+            } 
+
+          } else if (index === 2) {
+            if (map.getLayer("olympic2-lines")) {
+              map.removeLayer('olympic2-lines');
+            }
+            if (map.getLayer("owet-polygons")) {
+              map.removeLayer('owet-polygons');
+            }
+            if (map.getLayer("tm2-lines")) {
+              map.removeLayer('tm2-lines');
+            }
+            if (map.getLayer("tmwet-polygons")) {
+              map.removeLayer('tmwet-polygons');
+            }
+
+            if (response.direction == 'down') { 
+              document.getElementById("cover").style.visibility = "hidden"; // when you scroll down, the cover page will be hided.
+            } else {
+              document.getElementById("cover").style.visibility = "visible"; // when you scroll up, the cover page will be shown.
+            } 
+ 
+          } else if (index === 3) {
+            if (map.getLayer("orf-points")) {
+              map.removeLayer('orf-points');
+            }
+            if (map.getLayer("income-polygons")) {
+              map.removeLayer('income-polygons');
+            }
+
+            if (response.direction == 'down') { 
+              document.getElementById("cover").style.visibility = "hidden"; // when you scroll down, the cover page will be hided.
+            } else {
+              document.getElementById("cover").style.visibility = "visible"; // when you scroll up, the cover page will be shown.
+            } 
+
+          } else if (index === 4) {
+            if (map.getLayer("orf2-points")) {
+              map.removeLayer('orf2-points');
+            }
+            if (map.getLayer("o_tribe-polygons")) {
+              map.removeLayer('o_tribe-polygons');
+            }
+
+            if (response.direction == 'down') { 
+              document.getElementById("cover").style.visibility = "hidden"; // when you scroll down, the cover page will be hided.
+            } else {
+              document.getElementById("cover").style.visibility = "visible"; // when you scroll up, the cover page will be shown.
+            } 
+
+          } else if (index === 5) {
+            if (map.getLayer("ys-lines")) {
+              map.removeLayer('ys-lines');
+            }
+            if (map.getLayer("nw-lines")) {
+              map.removeLayer('nw-lines');
+            }
+            if (map.getLayer("ysrf-points")) {
+              map.removeLayer('ysrf-points');
+            }
+
+            if (response.direction == 'down') { 
+              document.getElementById("cover").style.visibility = "hidden"; // when you scroll down, the cover page will be hided.
+            } else {
+              document.getElementById("cover").style.visibility = "visible"; // when you scroll up, the cover page will be shown.
+            } 
+
+          } else if (index === 6) {
+            if (map.getLayer("ys2-lines")) {
+              map.removeLayer('ys2-lines');
+            }
+            if (map.getLayer("nw2-lines")) {
+              map.removeLayer('nw2-lines');
+            }
+            if (map.getLayer("yswet-polygons")) {
+              map.removeLayer('yswet-polygons');
+            }
+            if (map.getLayer("nwwet-polygons")) {
+              map.removeLayer('nwwet-polygons');
+            }
+
+            if (response.direction == 'down') { 
+              document.getElementById("cover").style.visibility = "hidden"; // when you scroll down, the cover page will be hided.
+            } else {
+              document.getElementById("cover").style.visibility = "visible"; // when you scroll up, the cover page will be shown.
+            } 
+
+          } else if (index === 7) {
+            if (map.getLayer("ysrf-points")) {
+              map.removeLayer('ysrf-points');
+            }
+            if (map.getLayer("income-polygons")) {
+              map.removeLayer('income-polygons');
+            }
+
+            if (response.direction == 'down') { 
+              document.getElementById("cover").style.visibility = "hidden"; // when you scroll down, the cover page will be hided.
+            } else {
+              document.getElementById("cover").style.visibility = "visible"; // when you scroll up, the cover page will be shown.
+            } 
+
+          } else if (index === 8) {
+            if (map.getLayer("nw-lines")) {
+              map.removeLayer('nw-lines');
+            }
+            if (map.getLayer("nwrf-points")) {
+              map.removeLayer('nwrf-points');
+            }
+            if (map.getLayer("pump-points")) {
+              map.removeLayer('pump-points');
+            }
+
+            if (response.direction == 'down') { 
+              document.getElementById("cover").style.visibility = "hidden"; // when you scroll down, the cover page will be hided.
+            } else {
+              document.getElementById("cover").style.visibility = "visible"; // when you scroll up, the cover page will be shown.
+            } 
+
+          } else if (index === 9) {
+            if (map.getLayer("nw2-lines")) {
+              map.removeLayer('nw2-lines');
+            }
+            if (map.getLayer("fire-polygons")) {
+              map.removeLayer('fire-polygons');
+            }
+
+            if (response.direction == 'down') { 
+              document.getElementById("cover").style.visibility = "hidden"; // when you scroll down, the cover page will be hided.
+            } else {
+              document.getElementById("cover").style.visibility = "visible"; // when you scroll up, the cover page will be shown.
+            } 
+
+          } else if (index === 10) {
+
+            if (map.getLayer("spill-points")) {
+              map.removeLayer('spill-points');
+            }
+            if (map.getLayer("olympic2-lines")) {
+              map.removeLayer('olympic2-lines');
+            }
+
+            if (response.direction == 'down') { 
+              document.getElementById("cover").style.visibility = "hidden"; // when you scroll down, the cover page will be hided.
+            } else {
+              document.getElementById("cover").style.visibility = "visible"; // when you scroll up, the cover page will be shown.
+            } 
+
+          }
+        
+        }
+
+
+    };
+    // Define a popup variable for tribal and wetland data
+    
+    // 0
+    let refinePopup = new mapboxgl.Popup({
+      closeButton: true,
+      closeOnClick: true
+    });
+
+    // 1
+    let olympicPopup = new mapboxgl.Popup({
+      closeButton: true,
+      closeOnClick: true
+    });
+
+    let tmPopup = new mapboxgl.Popup({
+      closeButton: true,
+      closeOnClick: true
+    });
+
+    let orfPopup = new mapboxgl.Popup({
+      closeButton: true,
+      closeOnClick: true
+    });
+    
+    // 2
+
+    let olympic2Popup = new mapboxgl.Popup({
+      closeButton: true,
+      closeOnClick: true
+    });
+
+    let owetPopup = new mapboxgl.Popup({
+      closeButton: true,
+      closeOnClick: true
+    });
+
+    let tm2Popup = new mapboxgl.Popup({
+      closeButton: true,
+      closeOnClick: true
+    });
+
+    let tmwetPopup = new mapboxgl.Popup({
+      closeButton: true,
+      closeOnClick: true
+    });
+
+    
+    // 3
+
+    let incomePopup = new mapboxgl.Popup({
+      closeButton: true,
+      closeOnClick: true
+    });
+
+   // 4
+
+   let orf2Popup = new mapboxgl.Popup({
+      closeButton: true,
+      closeOnClick: true
+    });
+
+    let o_tribePopup = new mapboxgl.Popup({
+      closeButton: true,
+      closeOnClick: true
+    });
+
+    // 5
+
+    let ysPopup = new mapboxgl.Popup({
+      closeButton: true,
+      closeOnClick: true
+    });
+
+    let nwPopup = new mapboxgl.Popup({
+      closeButton: true,
+      closeOnClick: true
+    });
+
+    let ysrfPopup = new mapboxgl.Popup({
+      closeButton: true,
+      closeOnClick: true
+    });
+    
+    //6 
+
+    let ys2Popup = new mapboxgl.Popup({
+      closeButton: true,
+      closeOnClick: true
+    });
+
+    let nw2Popup = new mapboxgl.Popup({
+      closeButton: true,
+      closeOnClick: true
+    });
+
+    let yswetPopup = new mapboxgl.Popup({
+      closeButton: true,
+      closeOnClick: true
+    });
+
+    let nwwetPopup = new mapboxgl.Popup({
+      closeButton: true,
+      closeOnClick: true
+    });
+
+    //7
+
+    // 8
+
+    let nwrfPopup = new mapboxgl.Popup({
+      closeButton: true,
+      closeOnClick: true
+    });
+
+    let pumpPopup = new mapboxgl.Popup({
+      closeButton: true,
+      closeOnClick: true
+    });
+
+    // 9
+
+    let firePopup = new mapboxgl.Popup({
+      closeButton: true,
+      closeOnClick: true
+    });
+
+    // 10
+
+    let olympic2 = new mapboxgl.Popup({
+      closeButton: true,
+      closeOnClick: true
+    });
+
+    let spillPopup = new mapboxgl.Popup({
+      closeButton: true,
+      closeOnClick: true
+    });
+
+
+
+    
+    // 0 
+    map.on('click', 'refine-points', function(e) {
+      let feature = e.features[0];
+      let popupContent = `<h3>${feature.properties.FacilityNa}</h3>
+                          <p>Oil Type: ${feature.properties.OilProduct}</p>`;
+      refinePopup.setLngLat(e.lngLat).setHTML(popupContent).addTo(map);
+    });
+
+    map.on('mouseenter', 'refine-points', function() {
+      map.getCanvas().style.cursor = 'pointer';
+    });
+
+    map.on('mouseleave', 'refine-points', function() {
+      map.getCanvas().style.cursor = '';
+    });
+
+
+    // 1
+    map.on('click', 'olympic-lines', function(e) {
+      let feature = e.features[0];
+      let popupContent = `<h3>${feature.properties.Name}</h3>
+                          <p>Oil Type: ${feature.properties.Type}</p>`;
+      olympicPopup.setLngLat(e.lngLat).setHTML(popupContent).addTo(map);
+    });
+
+    map.on('mouseenter', 'olympic-lines', function() {
+      map.getCanvas().style.cursor = 'pointer';
+    });
+
+    map.on('mouseleave', 'olympic-lines', function() {
+      map.getCanvas().style.cursor = '';
+    });
+
+    map.on('click', 'tm-lines', function(e) {
+      let feature = e.features[0];
+      let popupContent = `<h3>${feature.properties.Pipename}</h3>`;
+      tmPopup.setLngLat(e.lngLat).setHTML(popupContent).addTo(map);
+    });
+
+    map.on('mouseenter', 'tm-lines', function() {
+      map.getCanvas().style.cursor = 'pointer';
+    });
+
+    map.on('mouseleave', 'tm-lines', function() {
+      map.getCanvas().style.cursor = '';
+    });
+
+    map.on('click', 'orf-points', function(e) {
+      let feature = e.features[0];
+      let popupContent = `<h3>${feature.properties.NAME}</h3>
+                          <p>Type: ${feature.properties.TYPE}</p>`;
+      orfPopup.setLngLat(e.lngLat).setHTML(popupContent).addTo(map);
+    });
+
+    map.on('mouseenter', 'orf-points', function() {
+      map.getCanvas().style.cursor = 'pointer';
+    });
+
+    map.on('mouseleave', 'orf-points', function() {
+      map.getCanvas().style.cursor = '';
+    });
+
+
+    // 2
+    map.on('click', 'olympic2-lines', function(e) {
+      let feature = e.features[0];
+      let popupContent = `<h3>${feature.properties.Name}</h3>
+                          <p>Oil Type: ${feature.properties.Type}</p>`;
+      olympic2Popup.setLngLat(e.lngLat).setHTML(popupContent).addTo(map);
+    });
+
+    map.on('mouseenter', 'olympic2-lines', function() {
+      map.getCanvas().style.cursor = 'pointer';
+    });
+
+    map.on('mouseleave', 'olympic2-lines', function() {
+      map.getCanvas().style.cursor = '';
+    });
+
+    map.on('click', 'tm2-lines', function(e) {
+      let feature = e.features[0];
+      let popupContent = `<h3>${feature.properties.Pipename}</h3>`;
+      tm2Popup.setLngLat(e.lngLat).setHTML(popupContent).addTo(map);
+    });
+
+    map.on('mouseenter', 'tm2-lines', function() {
+      map.getCanvas().style.cursor = 'pointer';
+    });
+
+    map.on('mouseleave', 'tm2-lines', function() {
+      map.getCanvas().style.cursor = '';
+    });
+
+    // 3
+
+    map.on('click', 'income-polygons', function(e) {
+      let feature = e.features[0];
+      let popupContent = `<h3>Low-income Percent: ${feature.properties.LOWMODPCT}%</h3>`;
+      incomePopup.setLngLat(e.lngLat).setHTML(popupContent).addTo(map);
+    });
+
+    map.on('mouseenter', 'income-polygons', function() {
+      map.getCanvas().style.cursor = 'pointer';
+    });
+
+    map.on('mouseleave', 'income-polygons', function() {
+      map.getCanvas().style.cursor = '';
+    });
+
+    //4
+
+    map.on('click', 'orf2-points', function(e) {
+      let feature = e.features[0];
+      let popupContent = `<h3>${feature.properties.NAME}</h3>
+                          <p>Type: ${feature.properties.TYPE}</p>`;
+      orf2Popup.setLngLat(e.lngLat).setHTML(popupContent).addTo(map);
+    });
+
+    map.on('mouseenter', 'orf2-points', function() {
+      map.getCanvas().style.cursor = 'pointer';
+    });
+
+    map.on('mouseleave', 'orf2-points', function() {
+      map.getCanvas().style.cursor = '';
+    });
+
+
+    map.on('click', 'o_tribe-polygons', function(e) {
+      let feature = e.features[0];
+      let popupContent = `<h3>${feature.properties.TRIBAL_NM1}</h3>`;
+
+      o_tribePopup.setLngLat(e.lngLat).setHTML(popupContent).addTo(map);
+    });
+
+    map.on('mouseenter', 'o_tribe-polygons', function() {
+      map.getCanvas().style.cursor = 'pointer';
+    });
+
+    map.on('mouseleave', 'o_tribe-polygons', function() {
+      map.getCanvas().style.cursor = '';
+    });
+
+    // 5
+
+
+    map.on('click', 'ys-lines', function(e) {
+      let feature = e.features[0];
+      let popupContent = `<h3>${feature.properties.Name}</h3>
+                          <p>Type: ${feature.properties.Type}</p>`;
+
+      ysPopup.setLngLat(e.lngLat).setHTML(popupContent).addTo(map);
+    });
+
+    map.on('mouseenter', 'ys-lines', function() {
+      map.getCanvas().style.cursor = 'pointer';
+    });
+
+    map.on('mouseleave', 'ys-lines', function() {
+      map.getCanvas().style.cursor = '';
+    });
+
+    map.on('click', 'nw-lines', function(e) {
+      let feature = e.features[0];
+      let popupContent = `<h3>NorthWest Pipeline</h3>
+                          <p>Type: ${feature.properties.Type}</p>`;
+
+      nwPopup.setLngLat(e.lngLat).setHTML(popupContent).addTo(map);
+    });
+
+    map.on('mouseenter', 'nw-lines', function() {
+      map.getCanvas().style.cursor = 'pointer';
+    });
+
+    map.on('mouseleave', 'nw-lines', function() {
+      map.getCanvas().style.cursor = '';
+    });
+
+    map.on('click', 'ysrf-points', function(e) {
+      let feature = e.features[0];
+      let popupContent = `<h3>${feature.properties.FacilityNa}</h3>
+                          <p>Type: ${feature.properties.FacilityTy}</p>`;
+
+      ysrfPopup.setLngLat(e.lngLat).setHTML(popupContent).addTo(map);
+    });
+
+    map.on('mouseenter', 'ysrf-points', function() {
+      map.getCanvas().style.cursor = 'pointer';
+    });
+
+    map.on('mouseleave', 'ysrf-points', function() {
+      map.getCanvas().style.cursor = '';
+    });
+
+    // 6
+
+    map.on('click', 'ys2-lines', function(e) {
+      let feature = e.features[0];
+      let popupContent = `<h3>${feature.properties.Name}</h3>
+                          <p>Type: ${feature.properties.Type}</p>`;
+
+      ys2Popup.setLngLat(e.lngLat).setHTML(popupContent).addTo(map);
+    });
+
+    map.on('mouseenter', 'ys2-lines', function() {
+      map.getCanvas().style.cursor = 'pointer';
+    });
+
+    map.on('mouseleave', 'ys2-lines', function() {
+      map.getCanvas().style.cursor = '';
+    });
+
+    map.on('click', 'nw2-lines', function(e) {
+      let feature = e.features[0];
+      let popupContent = `<h3>NorthWest Pipeline</h3>
+                          <p>Type: ${feature.properties.Type}</p>`;
+
+      nw2Popup.setLngLat(e.lngLat).setHTML(popupContent).addTo(map);
+    });
+
+    map.on('mouseenter', 'nw2-lines', function() {
+      map.getCanvas().style.cursor = 'pointer';
+    });
+
+    map.on('mouseleave', 'nw2-lines', function() {
+      map.getCanvas().style.cursor = '';
+    });
+
+
+    map.on('click', 'spill-points', function(e) {
+      let feature = e.features[0];
+      let popupContent = `<h3>${feature.properties.Name}</h3>
+                          <p>Gallons Spilled: ${feature.properties.Gallons}</p>
+                          <p>Date: ${feature.properties.Date}`;
+
+      spillPopup.setLngLat(e.lngLat).setHTML(popupContent).addTo(map);
+    });
+
+    map.on('mouseenter', 'spill-points', function() {
+      map.getCanvas().style.cursor = 'pointer';
+    });
+
+    map.on('mouseleave', 'spill-points', function() {
+      map.getCanvas().style.cursor = '';
+    });
+
+
+    map.on('click', 'pump-points', function(e) {
+      let feature = e.features[0];
+      let popupContent = `<h3>${feature.properties.Name}</h3>
+                          <p>Status: ${feature.properties.Status}</p>`;
+
+      pumpPopup.setLngLat(e.lngLat).setHTML(popupContent).addTo(map);
+    });
+
+    map.on('mouseenter', 'pump-points', function() {
+      map.getCanvas().style.cursor = 'pointer';
+    });
+
+    map.on('mouseleave', 'pump-points', function() {
+      map.getCanvas().style.cursor = '';
+    });
+
+    
+    map.on('click', 'fire-polygons', function(e) {
+      let feature = e.features[0];
+      let popupContent = `Fire Name:<h3>${feature.properties.FIRENAME}</h3>
+                          <p>Acres Effected: ${feature.properties.FIRENUM}</p>
+                          <p>Year: ${feature.properties.YEAR}`;
+
+      firePopup.setLngLat(e.lngLat).setHTML(popupContent).addTo(map);
+    });
+
+    map.on('mouseenter', 'fire-polygons', function() {
+      map.getCanvas().style.cursor = 'pointer';
+    });
+
+    map.on('mouseleave', 'fire-polygons', function() {
+      map.getCanvas().style.cursor = '';
+    });
+
+
+
+
+
+
+
+
+    const nav = new mapboxgl.NavigationControl();
+    map.addControl(nav, 'top-right');
+
+
+
+
+
+    // 5 call the data loading function.
+    geojsonFetch();
+  </script>
+</body>
+
+
+</html>
+
+  
+<style>
+@media (max-width: 767px) {
+  #intro {
+    width: 90% !important;
+    left: 50% !important;
+    transform: translateX(-50%) translateY(-50%) !important;
+  }
+
+  .fullscreen-video, .fullscreen {
+    object-fit: cover;
+    width: 100% !important;
+    height: 100% !important;
+  }
+
+  .scene {
+    max-width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding: 1rem !important;
+  }
+
+  h1, h2, h3, h4, h5, p, ul, li {
+    font-size: 16px !important;
+    padding: 0 10px !important;
+  }
+}
+</style>

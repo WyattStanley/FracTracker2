@@ -1,0 +1,11 @@
+{
+"type": "FeatureCollection",
+"name": "ys_refine",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "FID": 22, "OBJECTID_1": 23, "FSID": 55763995, "FacilityNa": "Tesoro Pasco Terminal", "FacilityAl": "Chevron Pipe Line Company Pasco Bulk Terminal", "ClassType": "Class 1 Facility", "EcologyPro": "Spills Prevention, Preparedness, and Response", "FacilityTy": "MARINE TERMINAL", "OilProduct": "DIESEL/MARINE GAS OIL,GASOLINE", "FacilitySi": "https://apps.ecology.wa.gov/facilitysite/Report/Report.aspx?FacilitySiteId=55763995", "DockLatNum": 46.214417, "DockLongNu": -119.026993 }, "geometry": { "type": "Point", "coordinates": [ -119.02699, 46.21442 ] } },
+{ "type": "Feature", "properties": { "FID": 101, "OBJECTID_1": 102, "FSID": 0, "FacilityNa": "Phillips 66 Spokane Terminal", "FacilityAl": null, "ClassType": "Class 1 Facility", "EcologyPro": "Spills Prevention, Preparedness, and Response", "FacilityTy": "TANK FARM", "OilProduct": null, "FacilitySi": "https://apps.ecology.wa.gov/facilitysite/Report/Report.aspx?FacilitySiteId=0", "DockLatNum": 47.670414, "DockLongNu": -117.318008 }, "geometry": { "type": "Point", "coordinates": [ -117.31801, 47.67041 ] } },
+{ "type": "Feature", "properties": { "FID": 102, "OBJECTID_1": 103, "FSID": 0, "FacilityNa": "Phillips 66 Moses Lake Terminal", "FacilityAl": null, "ClassType": "Class 1 Facility", "EcologyPro": "Spills Prevention, Preparedness, and Response", "FacilityTy": "TANK FARM", "OilProduct": null, "FacilitySi": "https://apps.ecology.wa.gov/facilitysite/Report/Report.aspx?FacilitySiteId=0", "DockLatNum": 47.188049, "DockLongNu": -119.279121 }, "geometry": { "type": "Point", "coordinates": [ -119.27912, 47.18805 ] } },
+{ "type": "Feature", "properties": { "FID": 105, "OBJECTID_1": 106, "FSID": 0, "FacilityNa": "Andeavor Logistics Spokane Terminal", "FacilityAl": null, "ClassType": "Class 1 Facility", "EcologyPro": "Spills Prevention, Preparedness, and Response", "FacilityTy": "TANK FARM", "OilProduct": null, "FacilitySi": "https://apps.ecology.wa.gov/facilitysite/Report/Report.aspx?FacilitySiteId=0", "DockLatNum": 47.732121, "DockLongNu": -117.360397 }, "geometry": { "type": "Point", "coordinates": [ -117.3604, 47.73212 ] } }
+]
+}
