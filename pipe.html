@@ -2233,57 +2233,54 @@
 
 
 @media (max-width: 767px) {
-#intro {
-  width: 90% !important;
-  left: 50% !important;
-  transform: translateX(-50%) translateY(-50%) !important;
-}
+  #intro {
+    width: 90% !important;
+    left: 50% !important;
+    transform: translateX(-50%) translateY(-50%) !important;
+  }
 
+  #map {
+    display: none;
+    height: 0 !important;
+  }
 
-#map {
- display: none;
-}
+  #storyboard {
+    position: static !important;
+    height: auto !important;
+  }
 
-#storyboard {
-  position: static !important;
+  .scene {
+    background-color: rgb(226, 224, 224) !important;
+  }
 
-}
+  .scene:last-child {
+    padding-bottom: 20%;
+    margin-bottom: 0;
+  }
 
-.scene {
-  background-color: rgb(227, 217, 217) !important;
-}
+  .fullscreen-video {
+    position: absolute !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+  }
 
-.scene:first-child {
-  margin-top: -5% !important;
-}
+  .scene {
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding: 1rem !important;
+  }
 
-.scene:last-child {
-  padding-bottom: 20%;
-  margin-bottom: 0;
-}
+  h1, h2, h3, h4, h5, p, ul, li {
+    font-size: 12px !important;
+    padding: 0 5px !important;
+  }
 
-.fullscreen-video {
-  position: absolute !important;
-  width: 100% !important;
-  height: 100% !important;
-  object-fit: cover !important;
-}
+  .scene:first-child {
+    margin-top: 0 !important;
+  }
 
-.scene {
-  max-width: 100% !important;
-  margin-left: 0 !important;
-  margin-right: 0 !important;
-  padding: 1rem !important;
-}
-
-h1, h2, h3, h4, h5, p, ul, li {
-  font-size: 12px !important;
-  padding: 0 5px !important;
-}
-}
-
-.scene:first-child {
-  margin-top: 0 !important;
 }
 
 </style>
