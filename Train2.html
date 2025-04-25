@@ -1142,7 +1142,7 @@
             }
             function updateCoverVisibility(response) 
             if (response.direction == 'down') { 
-              document.getElementById("cover").style.visibility = "visible"; // when you scroll down, the cover page will be hided.
+              document.getElementById("cover").style.visibility = "hidden"; // when you scroll down, the cover page will be hided.
             } else {
               document.getElementById("cover").style.visibility = "visible"; // when you scroll up, the cover page will be shown.
             } 
@@ -1530,8 +1530,18 @@
     .scene:first-child {
       margin-top: 0 !important;
     }
+
+    body {
+      background-image: url('video/Pipe.png'); /* your image path */
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-attachment: fixed; /* make it stick while scrolling */
+    }
   
   }
+
+
   
   </style>
   
