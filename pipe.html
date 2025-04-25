@@ -21,6 +21,10 @@
 
 <body>
 
+    <div id="mobileWarning" style="display: none;">
+      <p>Map elements are not displayed on mobile devices for better performance.</p>
+    </div>
+
     <div class="topnav" id="myTopnav">
 
         <!-- Links to other sections -->
@@ -2191,6 +2195,13 @@
     // 5 call the data loading function.
     geojsonFetch();
   </script>
+
+<script>
+  if (window.innerWidth <= 767) {
+    document.getElementById('mobileWarning').style.display = 'block';
+  }
+</script>
+
 </body>
 
 
