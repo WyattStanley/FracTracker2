@@ -12,18 +12,29 @@ body,
 
 }
 
+
 #mobileWarning {
-  background-color: #f8d7da;
-  color: #721c24;
-  padding: 10px;
-  text-align: center;
-  font-size: 16px;
-  font-weight: bold;
   position: fixed;
-  top: 0;
-  width: 100%;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -20%);
+  background-color: white;
+  padding: 20px;
+  border: 2px solid #333;
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
   z-index: 9999;
+  width: 80%;
+  max-width: 400px;
+  text-align: center;
+  border-radius: 8px;
 }
+
+#closeMobileWarning {
+  float: right;
+  font-size: 24px;
+  cursor: pointer;
+}
+
 
 #storyboard {
   position: -webkit-sticky;

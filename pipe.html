@@ -2202,6 +2202,14 @@
       document.getElementById('mobileWarning').style.display = 'none';
     });
   </script>
+  <script>
+    // Show the mobile warning automatically if screen width is mobile
+    window.addEventListener('load', function () {
+      if (window.innerWidth <= 767) {
+        document.getElementById('mobileWarning').style.display = 'block';
+      }
+    });
+  </script>
 
 
 </body>
@@ -2259,10 +2267,13 @@
   }
 
   .fullscreen-video {
-    position: absolute !important;
-    width: 100% !important;
-    height: 100% !important;
-    object-fit: cover !important;
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  z-index: -1; /* Push it behind other content */
   }
 
   .scene {
