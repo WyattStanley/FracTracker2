@@ -21,7 +21,7 @@
 
     <div id="mobileWarning" style="display: none;">
       <span id="closeMobileWarning" style="float: right; cursor: pointer;">&times;</span>
-      <p>Map elements are not displayed on mobile devices for better performance.</p>
+      <p>This website does not display map elements on mobile devices. For better preformace use a desktop.</p>
     </div>
 
     <div class="topnav" id="myTopnav">
@@ -1140,8 +1140,9 @@
             if (map.getLayer("refine-points")) {
               map.removeLayer('refine-points');
             }
+            function updateCoverVisibility(response) 
             if (response.direction == 'down') { 
-              document.getElementById("cover").style.visibility = "hidden"; // when you scroll down, the cover page will be hided.
+              document.getElementById("cover").style.visibility = "visible"; // when you scroll down, the cover page will be hided.
             } else {
               document.getElementById("cover").style.visibility = "visible"; // when you scroll up, the cover page will be shown.
             } 
@@ -1500,7 +1501,7 @@
     }
   
     .scene:last-child {
-      padding-bottom: 20%;
+      padding-bottom: 10% !important;
       margin-bottom: 0;
     }
   
