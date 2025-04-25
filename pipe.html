@@ -452,55 +452,55 @@
     adjustStoryboardlSize(); // force a browser window resize.
     window.addEventListener("resize", adjustStoryboardlSize); // // ask the browser window listen to the resize event, thereby force a viewport resize whenever adjusting the window size.
 
-    // // 3. Define Generic window resize listener event
-    // function adjustStoryboardlSize() {
-
-    //   const scenes = document.getElementsByClassName("scene");
-    //   const storyboard = document.getElementById("storyboard");
-
-    //   // 3.1 determine the height of each scene element
-    //   let sceneH = Math.floor(window.innerHeight * 0.75);
-    //   for (const scene of scenes) {
-    //     scene.style.height = sceneH + "px";
-    //   }
-      
-    //   // 3.2 determin the height of the storyboard.
-    //   let storyboardHeight = window.innerHeight;
-    //   let storyboardMarginTop = (window.innerHeight - storyboardHeight) / 2;
-
-    //   storyboard.style.height = storyboardHeight + "px";
-    //   storyboard.style.top = storyboardMarginTop + "px"
-
-    //   // 3.3 tell scrollama/script panel to update new element dimensions
-    //   scriptPanel.resize();
-    // }
+    // 3. Define Generic window resize listener event
     function adjustStoryboardlSize() {
+
       const scenes = document.getElementsByClassName("scene");
       const storyboard = document.getElementById("storyboard");
 
-        // NEW: Check if on mobile
-      if (window.innerWidth < 768) {
-        // If mobile, reset styles
-        for (const scene of scenes) {
-          scene.style.height = 'auto';
-        }
-        storyboard.style.height = 'auto';
-        storyboard.style.top = '0';
-        return; // Stop here
-      }
-
-      // Else, desktop behavior
+      // 3.1 determine the height of each scene element
       let sceneH = Math.floor(window.innerHeight * 0.75);
       for (const scene of scenes) {
         scene.style.height = sceneH + "px";
       }
-
+      
+      // 3.2 determin the height of the storyboard.
       let storyboardHeight = window.innerHeight;
       let storyboardMarginTop = (window.innerHeight - storyboardHeight) / 2;
 
       storyboard.style.height = storyboardHeight + "px";
-      storyboard.style.top = storyboardMarginTop + "px";
+      storyboard.style.top = storyboardMarginTop + "px"
+
+      // 3.3 tell scrollama/script panel to update new element dimensions
+      scriptPanel.resize();
     }
+    // function adjustStoryboardlSize() {
+    //   const scenes = document.getElementsByClassName("scene");
+    //   const storyboard = document.getElementById("storyboard");
+
+    //     // NEW: Check if on mobile
+    //   if (window.innerWidth < 768) {
+    //     // If mobile, reset styles
+    //     for (const scene of scenes) {
+    //       scene.style.height = 'auto';
+    //     }
+    //     storyboard.style.height = 'auto';
+    //     storyboard.style.top = '0';
+    //     return; // Stop here
+    //   }
+
+    //   // Else, desktop behavior
+    //   let sceneH = Math.floor(window.innerHeight * 0.75);
+    //   for (const scene of scenes) {
+    //     scene.style.height = sceneH + "px";
+    //   }
+
+    //   let storyboardHeight = window.innerHeight;
+    //   let storyboardMarginTop = (window.innerHeight - storyboardHeight) / 2;
+
+    //   storyboard.style.height = storyboardHeight + "px";
+    //   storyboard.style.top = storyboardMarginTop + "px";
+    // }
 
 
     // 4. Initialize the mapbox
@@ -2226,9 +2226,19 @@
   transform: translateX(-50%) translateY(-50%) !important;
 }
 
-#storyboard {
-    position: static !important;
+
+#map {
+ display: none;
 }
+
+#storyboard {
+  position: static !important;
+  background: white !important;
+}
+body {
+  background: white !important;
+}
+
 
 .fullscreen-video, .fullscreen {
   object-fit: cover;
