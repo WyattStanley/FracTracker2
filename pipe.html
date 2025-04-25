@@ -22,6 +22,7 @@
 <body>
 
     <div id="mobileWarning" style="display: none;">
+      <span id="closeMobileWarning" style="float: right; cursor: pointer;">&times;</span>
       <p>Map elements are not displayed on mobile devices for better performance.</p>
     </div>
 
@@ -2196,11 +2197,12 @@
     geojsonFetch();
   </script>
 
-<script>
-  if (window.innerWidth <= 767) {
-    document.getElementById('mobileWarning').style.display = 'block';
-  }
-</script>
+  <script>
+    document.getElementById('closeMobileWarning').addEventListener('click', function() {
+      document.getElementById('mobileWarning').style.display = 'none';
+    });
+  </script>
+
 
 </body>
 
@@ -2248,7 +2250,7 @@
 }
 
 .scene {
-  background-color: rgb(227, 217, 217);
+  background-color: rgb(227, 217, 217) !important;
 }
 
 .scene:first-child {
