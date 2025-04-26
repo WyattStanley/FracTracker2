@@ -39,8 +39,8 @@
 
 
         <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links on smaller screens -->
-        <a href="javascript:void(0);" class="icon">
-            <i class="fa fa-bars"></i>
+        <a href="javascript:void(0);" class="icon" onclick="toggleMenu()">
+          <i class="fa fa-bars"></i>
         </a>
     </div>
 
@@ -2208,6 +2208,20 @@
         document.getElementById('mobileWarning').style.display = 'block';
       }
     });
+  </script>
+
+  <script>
+    function toggleMenu() {
+      var x = document.getElementById("myTopnav");
+      if (x.className === "topnav") {
+        x.className += " responsive";
+      } else {
+        x.className = "topnav";
+      }
+    }
+
+    // Attach the toggle function to the hamburger icon
+    document.querySelector('.icon').addEventListener('click', toggleMenu);
   </script>
 
 
